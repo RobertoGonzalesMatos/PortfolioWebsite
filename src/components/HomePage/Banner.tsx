@@ -104,8 +104,8 @@ const Banner: React.FC = () => {
   return (
     <motion.div className="banner" variants={banner}>
       <div className="card">
-        <img className="Picture1Me" src="Images/CropImage1.webp" />
-        <img className="Picture2Me" src="Images/CropImage3.webp" />
+        <img className="Picture1Me" src="public/CropImage1.webp" />
+        <img className="Picture2Me" src="public/CropImage3.webp" />
       </div>
       <div className="bannerTextContainer">
         <div className="rowContainer">
