@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 import React from "react";
-import "./styles/scrollToTop.css";
+import "./styles/ScrollToTop.css";
 
 interface ScrollToTopProps {
   elementRef: RefObject<HTMLDivElement>;
