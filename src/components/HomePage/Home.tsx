@@ -64,7 +64,7 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
               <ThreeScene />
               <img
                 className="background-image"
-                src="public/camping.webp"
+                src="/PortfolioWebsite/camping.webp"
                 alt="Camping"
               />
             </div>

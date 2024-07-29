@@ -61,7 +61,7 @@ const ThreeScene = () => {
     const loadModelWithDelay = () => {
       setTimeout(() => {
         loader.load(
-          "/models/WebPageRoom.gltf",
+          "/PortfolioWebsite/WebPageRoom.gltf",
           (gltf) => {
             const object = gltf.scene;
             scene.add(object);
