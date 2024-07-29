@@ -5,7 +5,6 @@ import Banner from "./Banner";
 import Header from "./Header";
 import { VerticalScroll } from "../Helpers/ScrollComponents";
 // import "../../styles/AddedPages.css";
-import ScrollToTop from "./scrollToTop";
 import ThreeScene from "../../Threemain";
 
 export interface IHomeProps {}
