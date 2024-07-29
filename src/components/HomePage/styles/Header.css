@@ -14,9 +14,15 @@
   margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #ffffff;
   z-index: 100;
   width: 100%;
+}
+
+.dark {
+  color: black;
+}
+.light {
+  color: #ffffff;
 }
 
 .header-inner {
@@ -50,13 +56,11 @@
 
 .nav li a {
   text-decoration: none;
-  color: #ffffff;
   white-space: nowrap;
 }
 
 .contact a {
   position: relative;
-  color: #ffffff;
   text-decoration: none;
   border-bottom: 2px solid #c9c9ed;
   padding-bottom: 12px;

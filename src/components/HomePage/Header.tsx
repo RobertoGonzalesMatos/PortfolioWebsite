@@ -4,20 +4,14 @@ import "./styles/Header.css";
 import { scrollToSection } from "./Home";
 
 interface HeaderProps {
-  onLinkClickContact: () => void;
-  onLinkClickAbout: () => void;
-  onLinkClickJoin: () => void;
+  headerColor: string;
 }
 
-const Header: React.FunctionComponent<HeaderProps> = ({
-  onLinkClickContact,
-  onLinkClickAbout,
-  onLinkClickJoin,
-}) => {
+const Header: React.FunctionComponent<HeaderProps> = ({ headerColor }) => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <div className="header">
+    <div className={"header " + headerColor}>
       <div className="header-inner">
         <div
           className="logo"
@@ -29,44 +23,27 @@ const Header: React.FunctionComponent<HeaderProps> = ({
         >
           Roberto Gonzales
         </div>
-        <nav className="nav">
+        <nav className={"nav " + headerColor}>
           <li onClick={() => navigate("/Code")}>
             <a>Code</a>
           </li>
-          <li onClick={() => navigate("/Music")}>
+          <li onClick={() => navigate("/Code")}>
             <a>Music</a>
           </li>
-          <li
-            onClick={() => {
-              onLinkClickAbout();
-            }}
-          >
+          <li onClick={() => navigate("/Code")}>
             <a>Dance/Sports</a>
           </li>
-          <li
-            data-testid="join-link"
-            onClick={() => {
-              onLinkClickJoin();
-            }}
-          >
+          <li onClick={() => navigate("/Code")}>
             <a>Misc</a>
           </li>
-          <li
-            data-testid="join-link"
-            onClick={() => {
-              onLinkClickJoin();
-            }}
-          >
+          <li onClick={() => navigate("/Code")}>
             <a>About me!</a>
           </li>
         </nav>
         <div
           data-testid="contact-link"
-          className="contact"
-          onClick={() => {
-            onLinkClickContact();
-            console.log("hey");
-          }}
+          className={"contact " + headerColor}
+          onClick={() => navigate("/Code")}
         >
           <a>Resume!</a>
         </div>

@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import Banner from "./Banner";
-import Header from "./Header";
+import Header from "../HomePage/Header";
 import { VerticalScroll } from "../Helpers/ScrollComponents";
-// import "../../styles/AddedPages.css";
-import ThreeScene from "../../Threemain";
+import "./Code.css";
 
-export interface IHomeProps {}
+export interface ICodeProps {}
 export const scrollToSection = (
   elementRef: React.RefObject<HTMLDivElement>,
   containerRef: React.RefObject<HTMLDivElement>
 ) => {
   if (elementRef.current && containerRef.current) {
-    console.log("Scrolling to:", containerRef.current);
     containerRef.current.scrollTo({
       top: elementRef.current.offsetTop - 125,
       behavior: "smooth",
@@ -21,12 +18,25 @@ export const scrollToSection = (
   }
 };
 
-const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
+const CodePage: React.FunctionComponent<ICodeProps> = (props) => {
+  const about = useRef<HTMLDivElement>(null);
+  const join = useRef<HTMLDivElement>(null);
+  const contact = useRef<HTMLDivElement>(null);
   const scrollAAARef = useRef<HTMLDivElement>(null);
+
+  const handleLinkClickContacts = () => {
+    scrollToSection(contact, scrollAAARef);
+  };
+  const handleLinkClickAbout = () => {
+    scrollToSection(about, scrollAAARef);
+  };
+  const handleLinkClickJoin = () => {
+    scrollToSection(join, scrollAAARef);
+  };
 
   return (
     <div>
-      <Header headerColor="light" />
+      <Header headerColor="dark" />
       <motion.div
         className="transition-body"
         animate={{ opacity: 1, y: 0 }}
@@ -35,17 +45,8 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
       >
         <VerticalScroll>
           <div className="scrollAAA" ref={scrollAAARef}>
-            <div className="bannerContainer">
-              <Banner />
-              <div className="gradient-overlay"></div>
-            </div>
-            <div className="container">
-              <ThreeScene />
-              <img
-                className="background-image"
-                src="/PortfolioWebsite/camping.webp"
-                alt="Camping"
-              />
+            <div className="WIPContainer">
+              <img className="WIP" src="/PortfolioWebsite/WIP.webp" alt="WIP" />
             </div>
           </div>
         </VerticalScroll>
@@ -54,4 +55,4 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
   );
 };
 
-export default HomePage;
+export default CodePage;
