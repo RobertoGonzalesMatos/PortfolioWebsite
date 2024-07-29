@@ -35,6 +35,7 @@ import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./HomePage/Home";
+import CodePage from "./Code/Code";
 
 let lastLocation: string = "/";
 
@@ -51,6 +52,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.key}>
         <Route path="/" element={<HomePage key="home" />} />
+        <Route path="/Code" element={<CodePage key="code" />} />
       </Routes>
     </AnimatePresence>
   );
