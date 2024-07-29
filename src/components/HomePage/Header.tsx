@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./styles/Header.css";
 import { scrollToSection } from "./Home";
 
@@ -14,11 +14,19 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   onLinkClickAbout,
   onLinkClickJoin,
 }) => {
+  const location = useLocation();
   const navigate = useNavigate();
   return (
     <div className="header">
       <div className="header-inner">
-        <div className="logo" onClick={() => navigate("/")}>
+        <div
+          className="logo"
+          onClick={() => {
+            if (location.pathname !== "/") {
+              navigate("/");
+            }
+          }}
+        >
           Roberto Gonzales
         </div>
         <nav className="nav">
@@ -33,7 +41,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               onLinkClickAbout();
             }}
           >
-            <a>About</a>
+            <a>Dance/Sports</a>
           </li>
           <li
             data-testid="join-link"
@@ -41,7 +49,15 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               onLinkClickJoin();
             }}
           >
-            <a>Why join us?</a>
+            <a>Misc</a>
+          </li>
+          <li
+            data-testid="join-link"
+            onClick={() => {
+              onLinkClickJoin();
+            }}
+          >
+            <a>About me!</a>
           </li>
         </nav>
         <div
@@ -52,7 +68,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             console.log("hey");
           }}
         >
-          <a>Contact us!</a>
+          <a>Resume!</a>
         </div>
         <div className="nav-menu">
           <span></span>

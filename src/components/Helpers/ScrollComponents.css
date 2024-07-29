@@ -1,0 +1,19 @@
+.horizontal-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scroll-content {
+  display: inline-block;
+}
+
+.vertical-scroll-container {
+  overflow-y: auto;
+  max-height: 100vh; /* Adjust the max height as needed */
+}
+
+.vertical-scroll-content {
+  display: flex;
+  flex-direction: column;
+}

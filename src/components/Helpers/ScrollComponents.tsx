@@ -1,3 +1,4 @@
+import "./scrollComponents.css";
 interface VerticalScrollProps {
   children: React.ReactNode;
 }

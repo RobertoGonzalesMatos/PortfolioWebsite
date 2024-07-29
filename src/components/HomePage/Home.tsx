@@ -57,9 +57,17 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
       >
         <VerticalScroll>
           <div className="scrollAAA" ref={scrollAAARef}>
-            <Banner />
+            <div className="bannerContainer">
+              <Banner />
+              <div className="gradient-overlay"></div>
+            </div>
             <div className="container">
               <ThreeScene />
+              <img
+                className="background-image"
+                src="Images/camping.webp"
+                alt="Camping"
+              />
             </div>
           </div>
         </VerticalScroll>

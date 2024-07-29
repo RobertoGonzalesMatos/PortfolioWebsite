@@ -5,32 +5,119 @@
   background-position: center;
   position: relative;
   width: 100%;
-  height: 85vh;
+  height: 96vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  right: -8%;
+}
+
+.Picture1Me {
+  position: absolute;
+  bottom: -46%;
+  width: 470px;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.Picture2Me {
+  position: absolute;
+  bottom: -46%;
+  right: -1%;
+  width: 470px;
+  height: auto;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.bannerTextContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+}
+.rowContainer {
+  display: flex;
 }
 
 .banner-row {
   color: aliceblue;
   display: flex;
   align-items: end;
-  font-family: "Arial", monospace; /* Specify a monospaced font */
+  font-family: "Arial"; /* Specify a monospaced font */
   font-weight: bold;
 }
 
 /* Center-aligned Row */
 .banner-row.center {
-  justify-content: flex-end;
-  text-align: flex-end;
+  color: rgb(190, 49, 61);
+  font-size: 10rem;
+}
+
+.banner-row.bottom {
+  font-size: 8.5rem;
+  width: 94%;
+}
+
+.banner-row.top {
+  font-size: 10rem;
 }
 
 /* Letter and Title Styling */
 .row-title {
-  font-size: 10rem;
   position: relative;
   display: inline-block;
   margin-bottom: -20px;
   margin-top: -20px;
+  width: 100%;
+}
+
+.rotatingBlock {
+  width: 100%;
+  position: relative;
+  height: 70px; /* Ensure height matches width for a square block */
+  transform-style: preserve-3d; /* Enable 3D transformations for children */
+  transition: transform 0.5s; /* Smooth transition for rotation */
+}
+
+.blockPanel {
+  top: 50px;
+  color: aliceblue;
+  position: absolute;
+  width: 100%;
+  text-align: end;
+  line-height: 50px; /* Center text vertically */
+  font-size: 8.5em; /* Adjust font size as needed */
+  transform-origin: center bottom; /* Rotation around the bottom edge */
+  align-items: end;
+  font-family: "Arial"; /* Specify a monospaced font */
+  font-weight: bold;
+}
+
+.panelVisible {
+  backface-visibility: hidden;
+  transform: rotateX(0deg) translateZ(100px); /* Rotation for the currently visible panel */
+  transition: transform 0.5s; /* Smooth transition for rotation */
+}
+
+.panelLeaving {
+  backface-visibility: hidden;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.panelDefault {
+  backface-visibility: hidden;
+  transform: rotateX(-90deg) translateZ(100px);
+  transition: transform 0.5s; /* Smooth transition for rotation */
 }

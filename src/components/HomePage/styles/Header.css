@@ -1,48 +1,45 @@
+/* Base styles */
 .body {
   margin: 0;
   padding: 0;
 }
+
 .header {
+  position: absolute;
   font-size: 1.6rem;
-  height: 100px;
+  height: 60px;
   display: flex;
   justify-content: center;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  color: #24242a;
-  background-color: #ffffff7d;
-  position: fixed;
+  color: #ffffff;
+  z-index: 100;
   width: 100%;
-  z-index: 1000;
 }
 
 .header-inner {
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  margin-left: 20px;
-  font-weight: 600;
+  position: relative;
+  font-weight: 700;
   font-size: 3rem;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    font-size: 3.2rem;
-    flex: 4;
-  }
-}
-
 .nav {
+  width: 70%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   cursor: pointer;
 }
 
@@ -53,28 +50,18 @@
 
 .nav li a {
   text-decoration: none;
-  color: #24242a;
+  color: #ffffff;
   white-space: nowrap;
-}
-
-.contact {
-  @media (max-width: 768px) {
-    flex: 1;
-  }
 }
 
 .contact a {
-  margin-right: 20px;
-  color: #24242a;
+  position: relative;
+  color: #ffffff;
   text-decoration: none;
-  border-bottom: 2px solid #24242a;
+  border-bottom: 2px solid #c9c9ed;
   padding-bottom: 12px;
   white-space: nowrap;
   cursor: pointer;
-
-  @media (max-width: 480px) {
-    border: none;
-  }
 }
 
 .nav-menu {
@@ -89,18 +76,59 @@
   cursor: pointer;
 }
 
-.nav-menu:hover {
-  background: #fff; /* Replace with the desired hover background color */
-}
+/* Media query for smaller screens */
+@media (max-width: 1220px) {
+  .header {
+    font-size: 1.4rem;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+  }
 
-@media (min-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .nav li {
+    margin: 0 20px;
+  }
+
+  .contact a {
+    padding-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
   .nav-menu {
-    display: none;
+    width: 48px;
   }
 }
 
-.nav-menu span {
-  width: 20px;
-  background: #24242a;
-  display: block;
+@media (max-width: 925px) {
+  .header {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav li {
+    margin: 0 10px;
+  }
+
+  .contact a {
+    padding-bottom: 6px;
+    font-size: 1.4rem;
+  }
+
+  .nav-menu {
+    width: 40px;
+  }
 }
