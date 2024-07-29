@@ -19,20 +19,7 @@ export const scrollToSection = (
 };
 
 const CodePage: React.FunctionComponent<ICodeProps> = (props) => {
-  const about = useRef<HTMLDivElement>(null);
-  const join = useRef<HTMLDivElement>(null);
-  const contact = useRef<HTMLDivElement>(null);
   const scrollAAARef = useRef<HTMLDivElement>(null);
-
-  const handleLinkClickContacts = () => {
-    scrollToSection(contact, scrollAAARef);
-  };
-  const handleLinkClickAbout = () => {
-    scrollToSection(about, scrollAAARef);
-  };
-  const handleLinkClickJoin = () => {
-    scrollToSection(join, scrollAAARef);
-  };
 
   return (
     <div>
