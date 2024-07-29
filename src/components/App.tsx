@@ -7,7 +7,7 @@ import "./App.css";
 export interface IApplicationProps {}
 function App() {
   return (
-    <Router>
+    <Router basename="/PortfolioWebsite/">
       <AnimatedRouts />
     </Router>
   );
