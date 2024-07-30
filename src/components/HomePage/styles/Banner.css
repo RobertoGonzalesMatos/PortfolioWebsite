@@ -43,9 +43,11 @@
 }
 
 .bannerTextContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  top: -20px;
 }
 .rowContainer {
   display: flex;
@@ -107,17 +109,94 @@
 
 .panelVisible {
   backface-visibility: hidden;
-  transform: rotateX(0deg) translateZ(100px); /* Rotation for the currently visible panel */
+  transform: rotateX(0deg) translateZ(50px); /* Rotation for the currently visible panel */
   transition: transform 0.5s; /* Smooth transition for rotation */
 }
 
 .panelLeaving {
   backface-visibility: hidden;
-  transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(50px);
 }
 
 .panelDefault {
   backface-visibility: hidden;
-  transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(50px);
   transition: transform 0.5s; /* Smooth transition for rotation */
+}
+
+@media (max-width: 1500px) {
+  .banner-row.center {
+    font-size: 8.5rem;
+  }
+
+  .banner-row.bottom {
+    font-size: 7.5rem;
+    width: 98%;
+  }
+
+  .banner-row.top {
+    font-size: 8.5rem;
+  }
+  .blockPanel {
+    top: 40px;
+    font-size: 7.3rem;
+  }
+  .Picture1Me {
+    width: 450px;
+    height: auto;
+  }
+  .Picture2Me {
+    width: 450px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1375px) {
+  .banner-row.center {
+    font-size: 6.5rem;
+  }
+
+  .banner-row.bottom {
+    position: relative;
+    right: -25px;
+    font-size: 5.5rem;
+  }
+
+  .banner-row.top {
+    font-size: 6.5rem;
+  }
+  .row-title {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .blockPanel {
+    top: 20px;
+    font-size: 5.4rem;
+  }
+  .Picture1Me {
+    width: 420px;
+    height: auto;
+  }
+  .Picture2Me {
+    width: 420px;
+    height: auto;
+  }
+  .card {
+    right: -30px;
+  }
+}
+
+@media (max-width: 1160px) {
+  .banner-row.center {
+    font-size: 5.5rem;
+  }
+
+  .banner-row.bottom {
+    font-size: 4.5rem;
+    width: 98%;
+  }
+
+  .banner-row.top {
+    font-size: 5.5rem;
+  }
 }

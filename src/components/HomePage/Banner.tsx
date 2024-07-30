@@ -95,7 +95,7 @@ const Banner: React.FC = () => {
       setCurrentActivity(
         (prevActivity) => (prevActivity + 1) % activities.length
       );
-    }, 3000);
+    }, 2500);
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);

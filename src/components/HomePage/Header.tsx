@@ -37,15 +37,11 @@ const Header: React.FunctionComponent<HeaderProps> = ({ headerColor }) => {
             <a>Misc</a>
           </li>
           <li onClick={() => navigate("/Code")}>
-            <a>About me!</a>
+            <a>About me</a>
           </li>
         </nav>
-        <div
-          data-testid="contact-link"
-          className={"contact " + headerColor}
-          onClick={() => navigate("/Code")}
-        >
-          <a>Resume!</a>
+        <div data-testid="contact-link" className={"contact " + headerColor}>
+          <a href="/PortfolioWebsite/resume.pdf">Resume</a>
         </div>
         <div className="nav-menu">
           <span></span>

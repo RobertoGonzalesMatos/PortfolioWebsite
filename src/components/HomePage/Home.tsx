@@ -5,7 +5,7 @@ import Banner from "./Banner";
 import Header from "./Header";
 import { VerticalScroll } from "../Helpers/ScrollComponents";
 // import "../../styles/AddedPages.css";
-import ThreeScene from "../../Threemain";
+// import ThreeScene from "../../Threemain";
 
 export interface IHomeProps {}
 export const scrollToSection = (
@@ -40,7 +40,11 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
               <div className="gradient-overlay"></div>
             </div>
             <div className="container">
-              <ThreeScene />
+              <img
+                className="room"
+                src="/PortfolioWebsite/room3D.webp"
+                alt="room"
+              />
               <img
                 className="background-image"
                 src="/PortfolioWebsite/camping.webp"
