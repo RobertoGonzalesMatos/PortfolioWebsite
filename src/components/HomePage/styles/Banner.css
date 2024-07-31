@@ -14,7 +14,7 @@
 .card {
   position: relative;
   width: 500px;
-  height: 500px;
+  height: 52.5%;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
   right: -8%;
@@ -23,7 +23,7 @@
 .Picture1Me {
   position: absolute;
   bottom: -45.5%;
-  width: 470px;
+  width: 93%;
   height: auto;
   backface-visibility: hidden;
 }
@@ -36,7 +36,7 @@
   position: absolute;
   bottom: -45.5%;
   right: -1%;
-  width: 470px;
+  width: 93%;
   height: auto;
   backface-visibility: hidden;
   transform: rotateY(180deg);
@@ -141,14 +141,6 @@
     top: 40px;
     font-size: 7.3rem;
   }
-  .Picture1Me {
-    width: 450px;
-    height: auto;
-  }
-  .Picture2Me {
-    width: 450px;
-    height: auto;
-  }
 }
 
 @media (max-width: 1375px) {
@@ -172,14 +164,6 @@
   .blockPanel {
     top: 20px;
     font-size: 5.4rem;
-  }
-  .Picture1Me {
-    width: 420px;
-    height: auto;
-  }
-  .Picture2Me {
-    width: 420px;
-    height: auto;
   }
   .card {
     right: -30px;

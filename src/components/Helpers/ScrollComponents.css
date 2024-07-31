@@ -9,6 +9,7 @@
 }
 
 .vertical-scroll-container {
+  overflow-x: hidden;
   overflow-y: auto;
   max-height: 100vh; /* Adjust the max height as needed */
 }
