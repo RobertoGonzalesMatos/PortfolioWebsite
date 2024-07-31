@@ -114,13 +114,21 @@ const Banner: React.FC = () => {
         </div>
         <BannerRowCenter title={"GONZALES"} />
         <BannerRowBottom title={"AND I LOVE TO"} />
-        <div className="rotatingBlock">
+        <motion.div
+          className="rotatingBlock"
+          initial={{ opacity: 0, y: 200 }} // Initial state with opacity and a small negative y translation
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.1, delay: 1.2 },
+          }}
+        >
           {activities.map((activity, index) => (
             <div key={index} className={getPanelClass(index)}>
               {activity}
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

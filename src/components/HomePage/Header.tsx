@@ -38,7 +38,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ headerColor, dim }) => {
           <li onClick={() => navigate("/Misc")}>
             <a className={dim ? "dimmed" : ""}>Misc</a>
           </li>
-          <li onClick={() => navigate("/About-Me")}>
+          <li onClick={() => navigate("/AboutMe")}>
             <a className={dim ? "dimmed" : ""}>About me</a>
           </li>
         </nav>
