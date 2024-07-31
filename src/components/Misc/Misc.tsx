@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Header from "../HomePage/Header";
 import { VerticalScroll } from "../Helpers/ScrollComponents";
-import "./Code.css";
+import "./Misc.css";
 
-export interface ICodeProps {}
+export interface IMiscProps {}
 
-const CodePage: React.FunctionComponent<ICodeProps> = (props) => {
+const MiscPage: React.FunctionComponent<IMiscProps> = (props) => {
   const scrollAAARef = useRef<HTMLDivElement>(null);
 
   return (
@@ -31,4 +31,4 @@ const CodePage: React.FunctionComponent<ICodeProps> = (props) => {
   );
 };
 
-export default CodePage;
+export default MiscPage;

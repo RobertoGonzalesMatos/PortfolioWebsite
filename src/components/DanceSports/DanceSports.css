@@ -1,0 +1,14 @@
+.WIPContainer {
+  overflow: hidden; /* Ensures that any overflow is hidden */
+  position: relative; /* Position context for child elements */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 1000px;
+}
+
+.WIP {
+  max-width: 1000px; /* Make the image width 100% of the container */
+  max-height: 1000px; /* Adjust height automatically to maintain aspect ratio */
+  object-fit: scale-down; /* Ensure the image is contained within the container */
+}

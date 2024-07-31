@@ -59,6 +59,8 @@
 .nav li a {
   text-decoration: none;
   white-space: nowrap;
+  padding: 10px 10px; /* Adjust padding for desired look */
+  transition: 0.2s ease-in-out;
 }
 
 .contact a {
@@ -68,6 +70,28 @@
   padding-bottom: 12px;
   white-space: nowrap;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.contact a:visited {
+  color: inherit !important;
+}
+
+.contact a:active {
+  color: inherit;
+}
+
+.nav li a.dimmed {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Adjust the color and transparency as needed */
+  border-radius: 25px; /* Creates the pill effect */
+  padding: 10px 10px; /* Adjust padding for desired look */
+  text-decoration: none;
+  color: inherit; /* Keep the original text color */
 }
 
 .nav-menu {
@@ -83,12 +107,24 @@
 }
 
 @media (max-width: 1500px) {
+  .header {
+    font-size: 1.5rem;
+  }
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .contact a {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .logo {
+    font-size: 2.1rem;
+  }
+  .nav {
+    width: 65%;
   }
 }
 
@@ -103,11 +139,11 @@
   }
 
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
   }
 
   .nav li {
-    margin: 0 20px;
+    margin: 20px;
   }
 
   .contact a {
