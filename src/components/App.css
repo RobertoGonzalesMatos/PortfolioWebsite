@@ -14,10 +14,12 @@ body {
 }
 .container {
   display: flex;
-  height: 200%;
+  height: 980px;
+  width: 100%;
   margin-inline: auto;
   position: relative;
   justify-content: center;
+  overflow: hidden;
 }
 
 .background-image {
@@ -51,6 +53,15 @@ body {
   height: auto; /* Adjust as needed */
 }
 
+.roomHighlight {
+  top: 24vh;
+  z-index: 7;
+  position: absolute;
+  width: 780px; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  pointer-events: none;
+}
+
 .image-container {
   position: relative;
   display: inline-block;
@@ -69,6 +80,46 @@ body {
   fill: rgba(255, 255, 255, 0);
   pointer-events: all;
   cursor: pointer;
+}
+
+.sky {
+  position: absolute;
+  z-index: -2;
+  height: auto; /* Adjust as needed */
+  top: -325px;
+  width: 2600px; /* Adjust as needed */
+  transition: all 7s ease;
+  /* transform: rotateZ(180deg); */
+}
+
+.day {
+  position: absolute;
+  z-index: -2;
+  height: auto; /* Adjust as needed */
+  top: -325px;
+  width: 2600px; /* Adjust as needed */
+  transition: all 7s ease;
+  transform: rotateZ(180deg);
+}
+
+.context-menu {
+  background-color: rgba(188, 185, 185, 0.409);
+  border-radius: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  top: 790px;
+  left: 15px;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 5%;
+}
+
+.SunMoon {
+  width: 60%;
+  height: auto;
 }
 
 /* .clickable-polygon:hover {
