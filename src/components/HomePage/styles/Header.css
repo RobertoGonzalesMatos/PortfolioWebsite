@@ -66,7 +66,7 @@
 .contact a {
   position: relative;
   text-decoration: none;
-  border-bottom: 2px solid #c9c9ed;
+  border-bottom: 2px solid #c9c9ed !important;
   padding-bottom: 12px;
   white-space: nowrap;
   cursor: pointer;
@@ -75,6 +75,10 @@
 
 .contact a:visited {
   color: inherit !important;
+}
+
+.contact a:first {
+  color: inherit;
 }
 
 .contact a:active {

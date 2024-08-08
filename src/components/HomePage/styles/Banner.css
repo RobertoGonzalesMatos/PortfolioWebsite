@@ -5,7 +5,7 @@
   background-position: center;
   position: relative;
   width: 100%;
-  height: 96vh;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,9 +23,10 @@
 .Picture1Me {
   position: absolute;
   bottom: -45.5%;
-  width: 93%;
+  width: 99%;
   height: auto;
   backface-visibility: hidden;
+  cursor: grab;
 }
 
 .card:hover {
@@ -36,21 +37,29 @@
   position: absolute;
   bottom: -45.5%;
   right: -1%;
-  width: 93%;
+  width: 98%;
   height: auto;
   backface-visibility: hidden;
   transform: rotateY(180deg);
+  cursor: grab;
 }
 
 .bannerTextContainer {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  top: -20px;
+  align-items: end;
+  width: 60%;
+  top: -70px;
 }
 .rowContainer {
   display: flex;
+}
+
+.rowContainerBottom {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .banner-row {
@@ -63,13 +72,12 @@
 
 /* Center-aligned Row */
 .banner-row.center {
-  color: rgb(190, 49, 61);
+  color: rgb(196, 41, 54);
   font-size: 10rem;
 }
 
 .banner-row.bottom {
   font-size: 8.5rem;
-  width: 94%;
 }
 
 .banner-row.top {
@@ -82,7 +90,6 @@
   display: inline-block;
   margin-bottom: -20px;
   margin-top: -20px;
-  width: 100%;
 }
 
 .rotatingBlock {
@@ -95,7 +102,7 @@
 
 .blockPanel {
   top: 50px;
-  color: rgb(190, 49, 61);
+  color: rgb(196, 41, 54);
   position: absolute;
   width: 100%;
   text-align: end;
@@ -131,7 +138,6 @@
 
   .banner-row.bottom {
     font-size: 7.5rem;
-    width: 98%;
   }
 
   .banner-row.top {
@@ -177,7 +183,6 @@
 
   .banner-row.bottom {
     font-size: 4.5rem;
-    width: 98%;
   }
 
   .banner-row.top {

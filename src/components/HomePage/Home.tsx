@@ -1,58 +1,73 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Banner from "./Banner";
 import Header from "./Header";
-import { VerticalScroll } from "../Helpers/ScrollComponents";
-import { useNavigate } from "react-router-dom";
+import RoomScene from "./RoomScene";
+import "./styles/Home.css";
 
 export interface IHomeProps {}
 
-export const scrollToSection = (
-  elementRef: React.RefObject<HTMLDivElement>,
-  containerRef: React.RefObject<HTMLDivElement>
-) => {
-  if (elementRef.current && containerRef.current) {
-    console.log("Scrolling to:", containerRef.current);
-    containerRef.current.scrollTo({
-      top: elementRef.current.offsetTop - 125,
-      behavior: "smooth",
-    });
-  }
-};
-
 const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
   const [dimHeader, setDimHeader] = useState<boolean>(false);
-  const [lightMode, setLightMode] = useState<boolean>(false);
-  const scrollComponentRef = useRef<HTMLDivElement>(null);
-  const [hovered, setHovered] = useState<boolean>(false);
-  const [highlightImage, setHighlightImage] = useState<string>("");
-  const navigate = useNavigate();
+  const [darkMode, setLightMode] = useState<boolean>(true);
+  const [roomMode, setRoomMode] = useState<boolean>(false);
 
   useEffect(() => {
-    const obfuscateHeader = () => {
-      if (scrollComponentRef.current) {
-        const divPosition = scrollComponentRef.current.scrollTop;
-        setDimHeader(divPosition > 860); // Adjust the scroll position threshold as needed
-      }
-    };
+    const handleExploreClick = () => {
+      const bannerDiv = document.getElementById("bannerContainer");
+      const roomDiv = document.getElementById("roomContainer");
+      const button = document.getElementById("exploreButton");
+      const buttonContainer = document.getElementById("buttonContainer");
 
-    if (scrollComponentRef.current) {
-      scrollComponentRef.current.addEventListener("scroll", obfuscateHeader);
-    }
+      if (bannerDiv && roomDiv && button && buttonContainer) {
+        // Add the combined animation class to start the animation
 
-    return () => {
-      if (scrollComponentRef.current) {
-        scrollComponentRef.current.removeEventListener(
-          "scroll",
-          obfuscateHeader
+        if (roomMode) {
+          button.classList.remove("buttonRoom");
+          buttonContainer.classList.remove("buttonContainerRoom");
+          bannerDiv.classList.add("shrink-up-grow-up");
+          roomDiv.classList.remove("toFront");
+          roomDiv.classList.add("shrink-up-grow-down");
+          bannerDiv.addEventListener(
+            "animationend",
+            () => {
+              roomDiv.classList.remove("shrink-up-grow-down");
+              bannerDiv.classList.remove("shrink-up-grow-up");
+            },
+            { once: true }
+          );
+          return;
+        }
+
+        bannerDiv.classList.add("shrink-up-grow-down");
+        roomDiv.classList.add("shrink-up-grow-up");
+        button.classList.add("buttonRoom");
+        buttonContainer.classList.add("buttonContainerRoom");
+        // Cleanup the class after the animation ends
+        bannerDiv.addEventListener(
+          "animationend",
+          () => {
+            bannerDiv.classList.remove("shrink-up-grow-down");
+            roomDiv.classList.add("toFront");
+            roomDiv.classList.remove("shrink-up-grow-up");
+          },
+          { once: true }
         );
       }
     };
-  }, []);
+
+    const exploreButton = document.getElementById("exploreButton");
+    exploreButton?.addEventListener("click", handleExploreClick);
+
+    // Cleanup the event listener when the component unmounts or the effect re-runs
+    return () => {
+      exploreButton?.removeEventListener("click", handleExploreClick);
+    };
+  }, [roomMode]);
 
   return (
-    <div>
-      <Header headerColor="light" dim={dimHeader} />
+    <div className="generalContainer">
+      <Header headerColor="light" dim={roomMode} />
       <motion.div
         className="transition-body"
         animate={{ opacity: 1, y: 0 }}
@@ -75,115 +90,37 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
           <img
             className="SunMoon"
             onClick={() => {
-              setLightMode(!lightMode);
+              setLightMode(!darkMode);
+              const root = document.getElementById("root");
+              if (root) {
+                darkMode!
+                  ? root.classList.add("backgroundDark")
+                  : root.classList.remove("backgroundDark");
+              }
             }}
-            src={"/PortfolioWebsite/" + (lightMode ? "Luna" : "Sol") + ".webp"}
+            src={"/PortfolioWebsite/" + (darkMode ? "Luna" : "Sol") + ".webp"}
             alt="SunMoon"
           />
         </div>
-        <VerticalScroll ref={scrollComponentRef}>
-          <div className="bannerContainer">
-            <Banner />
-            <div className="gradient-overlay"></div>
+        <div id="buttonContainer" className="buttonContainer">
+          <div
+            id="exploreButton"
+            className="exploreButton"
+            onClick={() => {
+              setRoomMode(!roomMode);
+            }}
+          >
+            <h1>
+              <span className="magic">{roomMode ? "Go Back" : "Explore!"}</span>
+            </h1>
           </div>
-          <div className="container">
-            <div className="image-container">
-              {hovered && (
-                <img
-                  className="roomHighlight"
-                  src={
-                    "/PortfolioWebsite/Highlights/" +
-                    highlightImage +
-                    "Highlight.webp"
-                  }
-                  alt="room"
-                />
-              )}
-              <img
-                className="room"
-                src="/PortfolioWebsite/room3D.webp"
-                alt="room"
-              />
-              <svg className="svg-overlay">
-                <polygon
-                  points="110,805 75,680 79,540 100,540 215,683 255,700 257,749"
-                  onClick={() => navigate("/Music")}
-                  onMouseEnter={() => {
-                    setHovered(true);
-                    setHighlightImage("Music");
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                    setHighlightImage("");
-                  }}
-                  className="clickable-polygon"
-                />
-                <polygon
-                  points="105,564 120,465 280,465 365,525 175,592"
-                  onClick={() => navigate("/Misc")}
-                  onMouseEnter={() => {
-                    setHovered(true);
-                    setHighlightImage("Misc");
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                    setHighlightImage("");
-                  }}
-                  className="clickable-polygon"
-                />
-                <polygon
-                  points="118,441 300,345 385,408 200,475"
-                  onClick={() => navigate("/DanceSports")}
-                  onMouseEnter={() => {
-                    setHovered(true);
-                    setHighlightImage("Dance");
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                    setHighlightImage("");
-                  }}
-                  className="clickable-polygon"
-                />
-                <polygon
-                  points="420,735 415,630 435,520 585,532 585,622 720,650 755,685 750,800 660,832"
-                  onClick={() => navigate("/Code")}
-                  onMouseEnter={() => {
-                    setHovered(true);
-                    setHighlightImage("Code");
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                    setHighlightImage("");
-                  }}
-                  className="clickable-polygon"
-                />
-                <polygon
-                  points="400,400 398,275 565,340 565,465"
-                  onClick={() => navigate("/AboutMe")}
-                  onMouseEnter={() => {
-                    setHovered(true);
-                    setHighlightImage("AboutMe");
-                  }}
-                  onMouseLeave={() => {
-                    setHovered(false);
-                    setHighlightImage("");
-                  }}
-                  className="clickable-polygon"
-                />
-              </svg>
-            </div>
-            <img
-              className="background-image"
-              src="/PortfolioWebsite/camping.webp"
-              alt="Camping"
-            />
-            <img
-              className={lightMode ? "ski day" : "sky"}
-              src="/PortfolioWebsite/sky.webp"
-              alt="sky"
-            />
-          </div>
-        </VerticalScroll>
+        </div>
+        <div id="bannerContainer" className="bannerContainer">
+          <Banner />
+        </div>
+        <div id="roomContainer" className="roomContainer">
+          <RoomScene lightMode={darkMode} />
+        </div>
       </motion.div>
     </div>
   );

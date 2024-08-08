@@ -1,0 +1,128 @@
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  position: absolute;
+  bottom: 100px;
+  height: 5%;
+  transition: all 1.8s ease-in-out;
+  cursor: grab;
+}
+.exploreButton {
+  background-color: rgb(234, 56, 56);
+  border-radius: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 180%;
+  transition: all 1.8s ease-in-out;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.roomContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 5 ease;
+  z-index: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.svg-overlay {
+  z-index: 4;
+}
+
+.transition-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.bannerContainer {
+  display: flex;
+  position: relative;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes shrinkUpGrowDown {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.5) translateY(-100px);
+  }
+  100% {
+    transform: scale(1) translateY(1000px);
+  }
+}
+
+@keyframes shrinkUpGrowUp {
+  0% {
+    z-index: 50;
+    transform: scale(1) translateY(1000px);
+  }
+  50% {
+    transform: scale(0.5) translateY(100px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.shrink-up-grow-down {
+  animation: shrinkUpGrowDown 2s forwards;
+}
+
+.shrink-up-grow-up {
+  z-index: 50;
+  animation: shrinkUpGrowUp 2s forwards;
+}
+.toFront {
+  z-index: 50;
+}
+
+.buttonRoom {
+  animation: buttonChange 2s forwards;
+  width: 5%;
+  height: 150%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5rem;
+  background-color: rgba(205, 203, 203, 0.547);
+}
+
+.buttonContainerRoom {
+  animation: buttonContainerChange 2s forwards;
+}
+
+@keyframes buttonChange {
+  0% {
+    color: transparent;
+  }
+
+  50% {
+    transform: translateY(200%);
+  }
+
+  100% {
+  }
+}
+
+@keyframes buttonContainerChange {
+  0% {
+  }
+
+  100% {
+    justify-content: end;
+  }
+}

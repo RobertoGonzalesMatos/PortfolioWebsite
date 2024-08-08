@@ -21,7 +21,7 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({ title }) => (
       <motion.span
         key={index}
         className="row-letter"
-        style={{ display: "inline-block", minWidth: "2%" }}
+        style={{ display: "inline-block" }}
         initial={{ opacity: 0, y: 400 }} // Initial state with opacity and a small negative y translation
         animate={{
           opacity: 1,
@@ -60,10 +60,8 @@ interface BannerRowCenterProps {
 }
 
 const BannerRowCenter: React.FC<BannerRowCenterProps> = ({ title }) => (
-  <div>
-    <div className={"banner-row center"}>
-      <AnimatedLetters title={title} />
-    </div>
+  <div className={"banner-row center"}>
+    <AnimatedLetters title={title} />
   </div>
 );
 
@@ -113,7 +111,12 @@ const Banner: React.FC = () => {
           <BannerRowCenter title={"ROBERTO"} />
         </div>
         <BannerRowCenter title={"GONZALES"} />
-        <BannerRowBottom title={"AND I LOVE TO"} />
+        <div className="rowContainerBottom">
+          <BannerRowBottom title={"AND"} />
+          <BannerRowBottom title={"I"} />
+          <BannerRowBottom title={"LOVE"} />
+          <BannerRowBottom title={"TO"} />
+        </div>
         <motion.div
           className="rotatingBlock"
           initial={{ opacity: 0, y: 200 }} // Initial state with opacity and a small negative y translation

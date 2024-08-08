@@ -19,13 +19,9 @@ const CodePage: React.FunctionComponent<ICodeProps> = (props) => {
         exit={{ opacity: 0, y: 400 }}
         transition={{ duration: 0.2 }}
       >
-        <VerticalScroll>
-          <div className="scrollAAA" ref={scrollAAARef}>
-            <div className="WIPContainer">
-              <img className="WIP" src="/PortfolioWebsite/WIP.webp" alt="WIP" />
-            </div>
-          </div>
-        </VerticalScroll>
+        <div className="WIPContainer">
+          <img className="WIP" src="/PortfolioWebsite/WIP.webp" alt="WIP" />
+        </div>
       </motion.div>
     </div>
   );
