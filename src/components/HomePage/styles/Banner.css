@@ -13,20 +13,25 @@
 
 .card {
   position: relative;
-  width: 500px;
+  width: 40%;
   height: 52.5%;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
-  right: -8%;
+  display: flex;
+  justify-content: center;
 }
 
-.Picture1Me {
+.Picture1Me,
+.Picture2Me {
   position: absolute;
   bottom: -45.5%;
-  width: 99%;
-  height: auto;
+  height: 90vh; /* Set height to 90vh */
+  width: auto; /* Ensure the width adjusts automatically */
+  max-width: 100%; /* Prevent the width from exceeding the container */
+  max-height: 90vh; /* Prevent the height from exceeding 90vh */
   backface-visibility: hidden;
   cursor: grab;
+  object-fit: contain; /* Preserve aspect ratio */
 }
 
 .card:hover {
@@ -34,14 +39,7 @@
 }
 
 .Picture2Me {
-  position: absolute;
-  bottom: -45.5%;
-  right: -1%;
-  width: 98%;
-  height: auto;
-  backface-visibility: hidden;
   transform: rotateY(180deg);
-  cursor: grab;
 }
 
 .bannerTextContainer {
@@ -49,7 +47,6 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  width: 60%;
   top: -70px;
 }
 .rowContainer {
@@ -57,7 +54,7 @@
 }
 
 .rowContainerBottom {
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -143,9 +140,15 @@
   .banner-row.top {
     font-size: 8.5rem;
   }
+
   .blockPanel {
     top: 40px;
     font-size: 7.3rem;
+  }
+
+  .Picture1Me,
+  .Picture2Me {
+    width: 90%;
   }
 }
 
@@ -156,23 +159,30 @@
 
   .banner-row.bottom {
     position: relative;
-    right: -25px;
     font-size: 5.5rem;
   }
 
   .banner-row.top {
     font-size: 6.5rem;
   }
+
   .row-title {
     margin-bottom: 0;
     margin-top: 0;
   }
+
   .blockPanel {
     top: 20px;
     font-size: 5.4rem;
   }
+
   .card {
     right: -30px;
+  }
+
+  .Picture1Me,
+  .Picture2Me {
+    width: 85%;
   }
 }
 
@@ -187,5 +197,24 @@
 
   .banner-row.top {
     font-size: 5.5rem;
+  }
+
+  .Picture1Me,
+  .Picture2Me {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Picture1Me,
+  .Picture2Me {
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Picture1Me,
+  .Picture2Me {
+    width: 70%;
   }
 }
