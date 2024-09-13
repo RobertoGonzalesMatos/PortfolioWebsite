@@ -30,16 +30,16 @@ body {
   top: 24vh;
   z-index: 2;
   position: relative;
-  width: 780px; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
+  width: auto; /* Adjust as needed */
+  height: 75vh; /* Adjust as needed */
 }
 
 .roomHighlight {
   top: 24vh;
   z-index: 7;
   position: absolute;
-  width: 780px; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
+  width: auto; /* Adjust as needed */
+  height: 75vh; /* Adjust as needed */
   pointer-events: none;
 }
 
@@ -52,8 +52,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 120%;
+  width: 100%; /* Adjust as needed */
+  height: 100vh; /* Adjust as needed */
   pointer-events: none; /* Allow clicks to pass through to the image */
 }
 
@@ -76,8 +76,8 @@ body {
   position: absolute;
   z-index: 0;
   height: auto; /* Adjust as needed */
-  top: -325px;
-  width: 2600px; /* Adjust as needed */
+  top: -40vh;
+  width: 145lh; /* Adjust as needed */
   transition: all 7s ease;
   transform: rotateZ(180deg);
 }
@@ -87,8 +87,8 @@ body {
   border-radius: 25px;
   padding-top: 5px;
   padding-bottom: 5px;
-  top: 790px;
-  left: 15px;
+  bottom: 3vh;
+  left: 1lh;
   position: absolute;
   z-index: 100;
   display: flex;
