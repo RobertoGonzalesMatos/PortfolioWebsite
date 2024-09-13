@@ -14,18 +14,17 @@ const Header: React.FunctionComponent<HeaderProps> = ({ headerColor, dim }) => {
 
   return (
     <div className={"header " + headerColor}>
-      <div className="header-inner">
-        <div
-          className="logo"
-          onClick={() => {
-            if (location.pathname !== "/") {
-              navigate("/");
-            }
-          }}
-        >
-          Roberto Gonzales
-        </div>
-        <nav className={"nav " + headerColor}>
+      <div
+        className="logo"
+        onClick={() => {
+          if (location.pathname !== "/") {
+            navigate("/");
+          }
+        }}
+      >
+        Roberto Gonzales
+      </div>
+      {/* <nav className={"nav " + headerColor}>
           <li onClick={() => navigate("/Code")}>
             <a className={dim ? "dimmed" : ""}>Code</a>
           </li>
@@ -41,17 +40,16 @@ const Header: React.FunctionComponent<HeaderProps> = ({ headerColor, dim }) => {
           <li onClick={() => navigate("/AboutMe")}>
             <a className={dim ? "dimmed" : ""}>About me</a>
           </li>
-        </nav>
-        <div data-testid="contact-link" className={"contact " + headerColor}>
-          <a href="/PortfolioWebsite/resume.pdf" target="_blank">
-            Resume
-          </a>
-        </div>
-        <div className="nav-menu">
-          <span></span>
-          <span></span>
-        </div>
+        </nav> */}
+      <div className={"contact " + headerColor}>
+        <a href="/PortfolioWebsite/resume.pdf" target="_blank">
+          Resume
+        </a>
       </div>
+      {/* <div className="nav-menu">
+          <span></span>
+          <span></span>
+        </div> */}
     </div>
   );
 };

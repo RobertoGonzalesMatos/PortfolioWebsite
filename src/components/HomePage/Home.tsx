@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Header from "./Header";
 import RoomScene from "./RoomScene";
 import "./styles/Home.css";
+import { VerticalScroll } from "../Helpers/ScrollComponents";
 
 export interface IHomeProps {}
 
@@ -115,8 +116,15 @@ const HomePage: React.FunctionComponent<IHomeProps> = (props) => {
             </h1>
           </div>
         </div>
-        <div id="bannerContainer" className="bannerContainer">
-          <Banner />
+        <div id="bannerContainer" className="vertical-scroll-content">
+          <VerticalScroll>
+            <div className="bannerContainer">
+              <Banner />
+            </div>
+            <div className="bannerContainer">
+              <Banner />
+            </div>
+          </VerticalScroll>
         </div>
         <div id="roomContainer" className="roomContainer">
           <RoomScene lightMode={darkMode} />
