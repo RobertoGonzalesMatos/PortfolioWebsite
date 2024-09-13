@@ -25,9 +25,13 @@ const RoomScene: React.FunctionComponent<IRoomSceneProps> = (props) => {
           />
         )}
         <img className="room" src="/PortfolioWebsite/room3D.webp" alt="room" />
-        <svg className="svg-overlay">
+        <svg
+          className="svg-overlay"
+          viewBox="0 0 797 744" // Match this with the original image resolution
+          preserveAspectRatio="xMidYMid slice"
+        >
           <polygon
-            points="110,805 75,680 79,540 100,540 215,683 255,700 257,749"
+            points="110,575 75,450 79,310 100,310 215,453 255,470 257,519"
             onClick={() => navigate("/Music")}
             onMouseEnter={() => {
               setHovered(true);
@@ -40,7 +44,7 @@ const RoomScene: React.FunctionComponent<IRoomSceneProps> = (props) => {
             className="clickable-polygon"
           />
           <polygon
-            points="105,564 120,465 280,465 365,525 175,592"
+            points="105,339 120,240 280,240 365,300 175,367"
             onClick={() => navigate("/Misc")}
             onMouseEnter={() => {
               setHovered(true);
@@ -53,7 +57,7 @@ const RoomScene: React.FunctionComponent<IRoomSceneProps> = (props) => {
             className="clickable-polygon"
           />
           <polygon
-            points="118,441 300,345 385,408 200,475"
+            points="118,216 300,120 385,183 200,250"
             onClick={() => navigate("/DanceSports")}
             onMouseEnter={() => {
               setHovered(true);
@@ -66,7 +70,7 @@ const RoomScene: React.FunctionComponent<IRoomSceneProps> = (props) => {
             className="clickable-polygon"
           />
           <polygon
-            points="420,735 415,630 435,520 585,532 585,622 720,650 755,685 750,800 660,832"
+            points="420,510 415,405 435,295 585,307 585,397 720,425 755,460 750,575 660,607"
             onClick={() => navigate("/Code")}
             onMouseEnter={() => {
               setHovered(true);
@@ -79,7 +83,7 @@ const RoomScene: React.FunctionComponent<IRoomSceneProps> = (props) => {
             className="clickable-polygon"
           />
           <polygon
-            points="400,400 398,275 565,340 565,465"
+            points="400,175 398,50 565,115 565,240"
             onClick={() => navigate("/AboutMe")}
             onMouseEnter={() => {
               setHovered(true);

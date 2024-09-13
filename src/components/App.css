@@ -45,16 +45,16 @@ body {
 
 .image-container {
   position: relative;
-  display: inline-block;
+  display: flex;
 }
 
 .svg-overlay {
+  top: 24vh;
+  z-index: 7;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%; /* Adjust as needed */
-  height: 100vh; /* Adjust as needed */
-  pointer-events: none; /* Allow clicks to pass through to the image */
+  height: 75vh; /* Adjust as needed */
+  pointer-events: none;
 }
 
 .clickable-polygon {
