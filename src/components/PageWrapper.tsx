@@ -32,26 +32,39 @@ class PageWrapper extends Component<IPageWrapperProps, IPageWrapperState> {
 
       if (bannerDiv && roomDiv && button && buttonContainer) {
         if (this.state.roomMode) {
+          // Reverse button and buttonContainer animation
           button.classList.remove("buttonRoom");
+          button.classList.add("buttonReverse");
           buttonContainer.classList.remove("buttonContainerRoom");
+          buttonContainer.classList.add("buttonContainerReverse");
+
+          // Existing animations for banner and room
           bannerDiv.classList.add("shrink-up-grow-up");
           roomDiv.classList.remove("toFront");
           roomDiv.classList.add("shrink-up-grow-down");
+
           bannerDiv.addEventListener(
             "animationend",
             () => {
               roomDiv.classList.remove("shrink-up-grow-down");
               bannerDiv.classList.remove("shrink-up-grow-up");
+              // Clean up reverse button animation
+              button.classList.remove("buttonReverse");
+              buttonContainer.classList.remove("buttonContainerReverse");
             },
             { once: true }
           );
           return;
         }
 
-        bannerDiv.classList.add("shrink-up-grow-down");
-        roomDiv.classList.add("shrink-up-grow-up");
+        // Forward animations for button and buttonContainer
         button.classList.add("buttonRoom");
         buttonContainer.classList.add("buttonContainerRoom");
+
+        // Existing animations for banner and room
+        bannerDiv.classList.add("shrink-up-grow-down");
+        roomDiv.classList.add("shrink-up-grow-up");
+
         bannerDiv.addEventListener(
           "animationend",
           () => {
