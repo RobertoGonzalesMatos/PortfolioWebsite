@@ -13,3 +13,20 @@
   max-height: 1000px; /* Adjust height automatically to maintain aspect ratio */
   object-fit: scale-down; /* Ensure the image is contained within the container */
 }
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
