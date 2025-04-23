@@ -7,17 +7,18 @@
 .header {
   font-family: "Arial";
   position: absolute;
+  top: 0;
   font-size: 1.6rem;
   display: flex;
   margin: 20px 40px; /* Adds space at the top, bottom, and sides */
-  z-index: 100;
+  z-index: 1000;
   width: calc(100% - 80px); /* Adjust width to account for the side margins */
   align-items: center;
   justify-content: space-between;
 }
 
 .dark {
-  color: black;
+  color: rgb(255, 254, 254);
 }
 .light {
   color: #ffffff;
@@ -29,6 +30,7 @@
   font-size: 3rem;
   cursor: pointer;
   width: 25%;
+  color: white;
 }
 
 .nav {
@@ -60,6 +62,7 @@
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
+  color: #ffffff;
 }
 
 .contact a:visited {

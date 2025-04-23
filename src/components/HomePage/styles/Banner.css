@@ -1,5 +1,4 @@
 .banner {
-  background-image: url("/PortfolioWebsite/CropImage2.webp");
   background-size: cover; /* Ensures the entire image is visible */
   background-repeat: no-repeat;
   background-position: center;
@@ -48,10 +47,11 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  top: -70px;
 }
 .rowContainer {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .rowContainerBottom {
@@ -70,16 +70,16 @@
 
 /* Center-aligned Row */
 .banner-row.center {
-  color: rgb(196, 41, 54);
-  font-size: 10rem;
-}
-
-.banner-row.bottom {
+  color: rgb(255, 236, 23);
   font-size: 8.5rem;
 }
 
+.banner-row.bottom {
+  font-size: 8rem;
+}
+
 .banner-row.top {
-  font-size: 10rem;
+  font-size: 8.5rem;
 }
 
 /* Letter and Title Styling */
@@ -93,19 +93,23 @@
 .rotatingBlock {
   width: 100%;
   position: relative;
-  height: 70px; /* Ensure height matches width for a square block */
-  transform-style: preserve-3d; /* Enable 3D transformations for children */
+  height: 100%;
   transition: transform 0.5s; /* Smooth transition for rotation */
+  overflow: hidden;
 }
-
+.MeContainer {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 .blockPanel {
-  top: 50px;
-  color: rgb(196, 41, 54);
-  position: absolute;
+  color: rgb(255, 227, 16);
   width: 100%;
   text-align: end;
-  line-height: 50px; /* Center text vertically */
-  font-size: 8.5em; /* Adjust font size as needed */
+  height: 100%;
+  font-size: 7.3rem; /* Adjust font size as needed */
   transform-origin: center bottom; /* Rotation around the bottom edge */
   align-items: end;
   font-family: "Arial"; /* Specify a monospaced font */
@@ -129,6 +133,10 @@
   transition: transform 0.5s; /* Smooth transition for rotation */
 }
 
+.MePicture {
+  width: 80%;
+}
+
 @media (max-width: 1500px) {
   .banner-row.center {
     font-size: 8.5rem;
@@ -146,14 +154,9 @@
     top: 40px;
     font-size: 7.3rem;
   }
-
-  .Picture1Me,
-  .Picture2Me {
-    width: 90%;
-  }
 }
 
-@media (max-width: 1375px) {
+@media (max-width: 1477px) {
   .banner-row.center {
     font-size: 6.5rem;
   }
@@ -175,15 +178,6 @@
   .blockPanel {
     top: 20px;
     font-size: 5.4rem;
-  }
-
-  .card {
-    right: -30px;
-  }
-
-  .Picture1Me,
-  .Picture2Me {
-    width: 85%;
   }
 }
 
@@ -217,5 +211,29 @@
   .Picture1Me,
   .Picture2Me {
     width: 70%;
+  }
+}
+
+.panelSlideIn {
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideIn 0.4s forwards;
+}
+
+.panelSlideOut {
+  animation: slideOut 0.4s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }

@@ -16,13 +16,12 @@ body {
   margin-inline: auto;
   position: relative;
   justify-content: center;
-  overflow: hidden;
 }
 
 .background-image {
   position: absolute;
-  z-index: 1;
-  height: 100%; /* Adjust as needed */
+  z-index: 0;
+  height: auto; /* Adjust as needed */
   width: 1760px; /* Adjust as needed */
 }
 
@@ -63,22 +62,26 @@ body {
   cursor: pointer;
 }
 
-.sky {
-  position: absolute;
-  z-index: 0;
-  height: auto; /* Adjust as needed */
-  top: -325px;
-  width: 2600px; /* Adjust as needed */
-  transition: all 7s ease;
+.sky-clip-wrapper {
+  position: relative;
+  height: 1700px;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
 }
 
-.day {
+.sky {
   position: absolute;
-  z-index: 0;
-  height: auto; /* Adjust as needed */
-  top: -40vh;
-  width: 145lh; /* Adjust as needed */
-  transition: all 7s ease;
+  top: -20vh;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  transition: top 7s ease, transform 7s ease;
+}
+
+.sky.dark-mode {
   transform: rotateZ(180deg);
 }
 
