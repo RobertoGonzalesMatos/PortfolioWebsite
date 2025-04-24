@@ -16,23 +16,20 @@ export async function Banner() {
   const rotatingBlock = banner.querySelector("#rotatingBlock");
 
   if (!rowTop || !rowCenter || !rowBottom || !rotatingBlock) {
-    throw new Error("❌ Missing one or more required banner elements");
+    throw new Error("Missing one or more required banner elements");
   }
 
   // Animate full rows (no staggered letters)
-  animateFullRow(rowTop, "I'M ROBERTO");
-  animateFullRow(rowCenter, "GONZALES");
-  animateFullRow(rowBottom, "AND I LOVE TO");
+  animateFullRow(rowTop, "Hi! I'm Roberto");
+  animateFullRow(rowCenter, "a Software Engineer");
+  animateFullRow(rowBottom, "and UIUX Designer.");
 
   // Animate activities
   const activities = [
-    "BREAKDANCE",
-    "PLAY MUSIC",
-    "COOK",
-    "CODE",
-    "DANCE SALSA",
-    "DO KARATE",
-    "TRAVEL",
+    "I breakdance!",
+    "I love to play music",
+    "Learning to cook",
+    "I'm a black belt",
   ];
   let currentActivity = 0;
 

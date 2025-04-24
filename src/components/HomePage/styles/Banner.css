@@ -7,7 +7,6 @@
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .card {
@@ -25,13 +24,15 @@
 .Picture2Me {
   position: absolute;
   bottom: -45.5%;
-  height: 90vh; /* Set height to 90vh */
-  width: auto; /* Ensure the width adjusts automatically */
-  max-width: 100%; /* Prevent the width from exceeding the container */
-  max-height: 90vh; /* Prevent the height from exceeding 90vh */
+  height: 90vh;
+  width: auto;
+  max-width: 100%;
+  max-height: 90vh;
   backface-visibility: hidden;
   cursor: grab;
-  object-fit: contain; /* Preserve aspect ratio */
+  object-fit: contain;
+  border-radius: 60px;
+  border: solid 2px white;
 }
 
 .card:hover {
@@ -46,12 +47,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
 }
 .rowContainer {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  height: 90%;
+  align-items: center;
 }
 
 .rowContainerBottom {
@@ -61,39 +64,34 @@
 }
 
 .banner-row {
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   display: flex;
-  align-items: end;
+  align-items: start;
   font-family: "Arial"; /* Specify a monospaced font */
-  font-weight: bold;
 }
 
 /* Center-aligned Row */
 .banner-row.center {
-  color: rgb(255, 236, 23);
-  font-size: 8.5rem;
+  font-size: 5rem;
 }
 
 .banner-row.bottom {
-  font-size: 8rem;
+  font-size: 5rem;
 }
 
 .banner-row.top {
-  font-size: 8.5rem;
+  font-size: 5rem;
 }
 
 /* Letter and Title Styling */
 .row-title {
   position: relative;
   display: inline-block;
-  margin-bottom: -20px;
-  margin-top: -20px;
 }
 
 .rotatingBlock {
   width: 100%;
   position: relative;
-  height: 100%;
   transition: transform 0.5s; /* Smooth transition for rotation */
   overflow: hidden;
 }
@@ -105,15 +103,14 @@
   align-items: center;
 }
 .blockPanel {
-  color: rgb(255, 227, 16);
+  color: rgb(255, 225, 117);
   width: 100%;
-  text-align: end;
+  text-align: start;
   height: 100%;
-  font-size: 7.3rem; /* Adjust font size as needed */
+  font-size: 5rem; /* Adjust font size as needed */
   transform-origin: center bottom; /* Rotation around the bottom edge */
-  align-items: end;
+  align-items: start;
   font-family: "Arial"; /* Specify a monospaced font */
-  font-weight: bold;
 }
 
 .panelVisible {
@@ -135,25 +132,8 @@
 
 .MePicture {
   width: 80%;
-}
-
-@media (max-width: 1500px) {
-  .banner-row.center {
-    font-size: 8.5rem;
-  }
-
-  .banner-row.bottom {
-    font-size: 7.5rem;
-  }
-
-  .banner-row.top {
-    font-size: 8.5rem;
-  }
-
-  .blockPanel {
-    top: 40px;
-    font-size: 7.3rem;
-  }
+  border-radius: 60px;
+  border: solid 5px white;
 }
 
 @media (max-width: 1477px) {
@@ -187,7 +167,7 @@
   }
 
   .banner-row.bottom {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 
   .banner-row.top {

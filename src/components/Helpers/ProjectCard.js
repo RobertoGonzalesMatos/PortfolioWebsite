@@ -8,7 +8,7 @@ export function createProjectCard({ imageUrl, title, date, tags }) {
     </div>
     <div class="description fade-in-delay">
       <div class="title-row">
-        <h1>${title}</h1>
+        <h1 class="title-card">${title}</h1>
         <span class="date">${date}</span>
       </div>
       <div class="tags">
