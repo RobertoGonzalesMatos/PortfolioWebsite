@@ -1,4 +1,5 @@
 import { loadHomePage } from "./HomePage/Home.js";
+import { loadAboutPage } from "./AboutMe.js";
 
 export async function renderAnimatedRoutes() {
   const route = location.pathname.replace("/PortfolioWebsite", "") || "/";
@@ -26,6 +27,8 @@ export async function renderAnimatedRoutes() {
       case "/":
         console.log("hi");
         return await loadHomePage(darkMode, toggleDarkMode);
+      case "/About":
+        return await loadAboutPage(darkMode, toggleDarkMode);
       default:
         const notFound = document.createElement("h2");
         notFound.textContent = "404 - Page Not Found";

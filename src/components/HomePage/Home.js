@@ -56,16 +56,6 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
 
   const cardTarget = container.querySelector("#projects-wrapper");
   if (cardTarget) {
-    cardTarget.style.display = "grid";
-    cardTarget.style.gridTemplateColumns = "1fr 1fr";
-    cardTarget.style.gridTemplateRows = "1fr 1fr";
-    cardTarget.style.columnGap = "4rem";
-    cardTarget.style.rowGap = "2rem";
-    cardTarget.style.justifyContent = "space-evenly";
-    cardTarget.style.alignItems = "center";
-    // cardTarget.style.margin = "0 auto";
-    cardTarget.style.width = "fit-content";
-
     projectData.forEach((data) => {
       const card = createProjectCard(data);
       card.style.transition = "transform 0.3s ease";

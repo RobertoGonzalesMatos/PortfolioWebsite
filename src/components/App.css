@@ -26,34 +26,60 @@ body {
 }
 
 .room {
-  top: 24vh;
   z-index: 2;
   position: relative;
-  width: auto; /* Adjust as needed */
-  height: 75vh; /* Adjust as needed */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .roomHighlight {
-  top: 24vh;
   z-index: 7;
   position: absolute;
-  width: auto; /* Adjust as needed */
-  height: 75vh; /* Adjust as needed */
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+  object-fit: contain;
 }
 
 .image-container {
   position: relative;
   display: flex;
+  width: 797px; /* Original width of your image */
+  height: 744px; /* Original height */
+  transform-origin: top left;
+}
+
+.roomContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  max-height: 1000px;
+}
+
+.roomTitle {
+  position: absolute;
+  z-index: 13;
+  top: 1vh;
+  font-weight: bold;
+  color: white;
+  font-size: 3.5rem;
+  padding: 0.25em 0.25em;
+  background-color: rgba(59, 59, 59, 0.3);
+  border-radius: 999px;
 }
 
 .svg-overlay {
-  top: 24vh;
   z-index: 7;
   position: absolute;
-  width: 100%; /* Adjust as needed */
-  height: 75vh; /* Adjust as needed */
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+  object-fit: contain;
 }
 
 .clickable-polygon {
@@ -97,7 +123,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 5%;
 }
 
 .SunMoon {
@@ -108,9 +133,12 @@ body {
 
 .vertical-scroll-content {
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   position: relative;
 }
-/* .clickable-polygon:hover {
-  fill: rgba(255, 255, 255, 0.7);
-} */
+
+@media (max-width: 800px) {
+  .roomContainer {
+    display: none;
+  }
+}

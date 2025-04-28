@@ -34,7 +34,7 @@ export async function RoomScene(lightMode) {
     },
     {
       points: "400,175 398,50 565,115 565,240",
-      route: "/AboutMe",
+      route: "/About",
       highlight: "AboutMe",
     },
   ];
@@ -59,10 +59,8 @@ export async function RoomScene(lightMode) {
 
     polygon.addEventListener("click", () => {
       history.pushState({}, "", `/PortfolioWebsite${route}`);
-      const app = document.getElementById("app");
-      app.innerHTML = "";
-      import("../App.js").then(({ createApp }) => {
-        app.appendChild(createApp());
+      import("/src/main.js").then(({ renderApp }) => {
+        renderApp();
       });
     });
 

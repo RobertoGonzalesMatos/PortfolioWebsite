@@ -3,6 +3,7 @@ body {
   font-family: "Arial", sans-serif;
   background-color: #fefaf6;
   color: #2c2c2c;
+  font-size: 18px; /* Set a base font size for large screens */
 }
 
 .ProjectCard {
@@ -22,6 +23,7 @@ body {
 
 .title-card {
   color: white;
+  font-size: 1.8rem;
 }
 
 .main-image {
@@ -29,10 +31,12 @@ body {
   border-radius: 20px;
   display: block;
   aspect-ratio: 6 / 3;
+  object-fit: cover;
 }
 
 .description {
   margin-top: 10px;
+  font-size: 1rem;
 }
 
 .title-row {
@@ -45,6 +49,7 @@ body {
 .date {
   font-style: italic;
   color: #e1e1e1;
+  font-size: 0.9rem;
 }
 
 .tags {
@@ -58,7 +63,7 @@ body {
   border: 1.5px solid #000;
   padding: 6px 14px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 0.9rem;
   background-color: #fff;
   transition: 0.3s ease;
 }
@@ -80,4 +85,130 @@ body {
 
 .fade-in-delay {
   transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+}
+
+/* 📱 Responsive tweaks */
+
+/* Tablets */
+@media (max-width: 1175px) {
+  body {
+    font-size: 16px;
+  }
+
+  .ProjectCard {
+    max-width: 400px;
+    padding: 18px;
+  }
+
+  .title-card {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .date {
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}
+
+/* Small tablets and big phones */
+@media (max-width: 960px) {
+  body {
+    font-size: 15px;
+  }
+
+  .ProjectCard {
+    max-width: 350px;
+    padding: 16px;
+  }
+
+  .title-card {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .ProjectCard {
+    max-width: 400px;
+    padding: 16px;
+    margin: 10px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .title-card {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .date {
+    font-size: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  body {
+    font-size: 13px;
+  }
+
+  .main-image {
+    aspect-ratio: 5 / 3;
+  }
+
+  .title-card {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .date {
+    font-size: 0.7rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
 }
