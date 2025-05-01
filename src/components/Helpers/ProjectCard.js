@@ -1,7 +1,11 @@
 import "./ProjectCard.css";
-export function createProjectCard({ imageUrl, title, date, tags }) {
+import { renderApp } from "../../main.js";
+
+export function createProjectCard({ imageUrl, title, date, tags, path }) {
   const card = document.createElement("div");
   card.className = "ProjectCard fade-in";
+  card.style.cursor = "pointer";
+
   card.innerHTML = `
     <div class="image-card">
       <img src="${imageUrl}" alt="${title}" class="main-image" />
@@ -16,6 +20,11 @@ export function createProjectCard({ imageUrl, title, date, tags }) {
       </div>
     </div>
   `;
+
+  card.addEventListener("click", async () => {
+    history.pushState({}, "", `/PortfolioWebsite${path}`);
+    await renderApp();
+  });
 
   requestAnimationFrame(() => {
     card.style.opacity = 1;

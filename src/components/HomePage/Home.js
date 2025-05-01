@@ -29,28 +29,32 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
 
   const projectData = [
     {
-      imageUrl: "/PortfolioWebsite/3dgame.webp",
-      title: "Good Morning Café NFT",
+      imageUrl: "/PortfolioWebsite/mamisincancer.png",
+      title: "MamisinCancer Redesign",
       date: "May–June 2023",
-      tags: ["Product Design", "UX Research", "Figma"],
+      tags: ["UX Design", "TypeScript", "React", "Figma"],
+      path: "/Projects/ResponsiveRedesign",
     },
     {
-      imageUrl: "/PortfolioWebsite/meiklejohn.webp",
-      title: "AI Music Tool",
+      imageUrl: "/PortfolioWebsite/componentImage.png",
+      title: "Accessible Dropdown",
       date: "July 2023",
-      tags: ["ML", "Music", "React"],
+      tags: ["Accesibility", "React", "TypeScript", "CSS"],
+      path: "/Projects/AccesibleComponent",
     },
     {
       imageUrl: "/PortfolioWebsite/sidequest.gif",
-      title: "Portfolio Website",
-      date: "2024",
-      tags: ["Frontend", "Vite", "Vanilla JS"],
+      title: "SideQuests",
+      date: "Nov 2024 - Feb 2025",
+      tags: ["FullStack", "React", "AI", "Figma", "CSS"],
+      path: "/Projects/SideQuests",
     },
     {
       imageUrl: "/PortfolioWebsite/PartifulRedesign.png",
-      title: "Visual Novel Engine",
+      title: "Partiful Casual Events",
       date: "March 2024",
-      tags: ["Game Dev", "JS", "Narrative"],
+      tags: ["UX Design", "Figma", "Product Design"],
+      path: "/Projects/Partiful",
     },
   ];
 

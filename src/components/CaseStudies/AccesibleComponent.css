@@ -1,0 +1,261 @@
+:root {
+  --background: #fef8f3;
+  --primary-text: #ffffff;
+  --accent-color: #d81b60;
+  --sidebar-width: 220px;
+  --max-content-width: 1100px;
+}
+
+body {
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+.case-study-page {
+  color: var(--primary-text);
+  display: flex;
+  min-height: 100vh;
+  padding: 2rem 4rem;
+  justify-content: center;
+}
+.parallax-container {
+  position: relative;
+}
+
+.parallax-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: min-content;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.parallax-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  will-change: transform;
+}
+
+.scroll-end-spacer {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 175px;
+  padding-top: 2rem;
+  border-right: 1px solid #e0d8d1;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  margin-right: 50px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.75rem 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: var(--accent-color);
+}
+
+.case-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 3rem;
+  max-width: var(--max-content-width);
+}
+
+.hero-section {
+  width: 100%;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-section p {
+  font-size: 1.3rem;
+  font-family: "Helvetica Neue", sans-serif;
+  margin-bottom: 2.5rem;
+  color: #e8e8e8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.info-grid div {
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5rem;
+}
+
+.case-section {
+  margin-bottom: 6rem;
+}
+
+.case-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.case-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-family: "Helvetica Neue", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.case-section img.section-image {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+}
+
+.iframe-prototype {
+  width: 100%;
+  height: 500px;
+  border: 2px solid #e0d8d1;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+/* New Subtitle Style */
+.subtitle {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #222;
+}
+
+/* Problem Section Two-Column Layout */
+.problem-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.problem-left {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.problem-callout {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.problem-right {
+  flex: 1 1 55%;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.problem-right ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.problem-right li {
+  margin-bottom: 0.8rem;
+}
+.four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.four-grid .section-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet screens */
+@media (max-width: 1200px) {
+  .case-study-page {
+    padding: 2rem;
+  }
+
+  .sidebar {
+    margin-right: 30px;
+    width: 150px;
+  }
+
+  .case-content {
+    padding-left: 2rem;
+    max-width: 90%;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}

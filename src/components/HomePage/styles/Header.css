@@ -1,181 +1,127 @@
-/* Base styles */
-.body {
-  margin: 0;
-  padding: 0;
-}
-
+/* Header Base */
 .header {
-  font-family: "Arial";
-  position: absolute;
+  position: fixed;
   top: 0;
-  font-size: 1.6rem;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 0 40px;
+
+  color: white;
   display: flex;
-  margin: 20px 40px; /* Adds space at the top, bottom, and sides */
-  z-index: 1000;
-  width: calc(100% - 80px); /* Adjust width to account for the side margins */
   align-items: center;
   justify-content: space-between;
-}
-
-.dark {
-  color: rgb(255, 254, 254);
-}
-.light {
-  color: #ffffff;
+  z-index: 1000;
 }
 
 .logo {
-  position: relative;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   cursor: pointer;
-  width: 25%;
-  color: white;
-}
-
-.nav {
-  width: 70%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.nav li {
-  list-style: none;
-  margin: 0 40px;
-}
-
-.nav li a {
-  text-decoration: none;
   white-space: nowrap;
-  padding: 10px 10px; /* Adjust padding for desired look */
-  transition: 0.2s ease-in-out;
+  background-color: #22222252;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #c9c9ed;
 }
 
 .contact a {
-  position: relative;
+  background-color: #22222252;
+  padding: 5px;
+
+  border-radius: 50px;
   text-decoration: none;
-  border-bottom: 2px solid #c9c9ed !important;
-  padding-bottom: 12px;
-  white-space: nowrap;
+  font-size: 1.2rem;
+  color: white;
+  border-bottom: 2px solid #c9c9ed;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #c9c9ed;
+}
+
+/* Hamburger (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
-  text-decoration: none;
-  color: #ffffff;
+  background-color: #22222252;
+  border-radius: 50px;
+  padding: 10px;
 }
 
-.contact a:visited {
-  color: inherit !important;
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.contact a:first {
-  color: inherit;
-}
-
-.contact a:active {
-  color: inherit;
-}
-
-.nav li a.dimmed {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Adjust the color and transparency as needed */
-  border-radius: 25px; /* Creates the pill effect */
-  padding: 10px 10px; /* Adjust padding for desired look */
-  text-decoration: none;
-  color: inherit; /* Keep the original text color */
-}
-
-.nav-menu {
-  /* height: 56px; */
-  width: 56px;
-  border-radius: 100%;
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  cursor: pointer;
+  gap: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
 }
 
-@media (max-width: 1500px) {
-  .header {
+.mobile-menu a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* Show Mobile Menu */
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive behavior */
+@media (max-width: 800px) {
+  .nav-links,
+  .contact {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .logo {
+    font-weight: 700;
     font-size: 1.5rem;
   }
-  .logo {
-    font-size: 2.4rem;
-  }
-
-  .contact a {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 1440px) {
-  .logo {
-    font-size: 2.1rem;
-  }
-  .nav {
-    width: 65%;
-  }
-}
-
-@media (max-width: 1220px) {
   .header {
-    font-size: 1.4rem;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 50px;
-  }
-
-  .logo {
-    font-size: 2.1rem;
-  }
-
-  .nav li {
-    margin: 20px;
-  }
-
-  .contact a {
-    padding-bottom: 8px;
-    font-size: 1.5rem;
-  }
-
-  .nav-menu {
-    width: 48px;
-  }
-}
-
-@media (max-width: 925px) {
-  .header {
-    font-size: 1.2rem;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-
-  .nav li {
-    margin: 0 10px;
-  }
-
-  .contact a {
-    padding-bottom: 6px;
-    font-size: 1.4rem;
-  }
-
-  .nav-menu {
-    width: 40px;
+    padding: 0 20px;
   }
 }

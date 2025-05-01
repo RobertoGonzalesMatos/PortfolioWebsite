@@ -29,7 +29,7 @@ export async function RoomScene(lightMode) {
     {
       points:
         "420,510 415,405 435,295 585,307 585,397 720,425 755,460 750,575 660,607",
-      route: "/Code",
+      route: "/Projects",
       highlight: "Code",
     },
     {

@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
   background-color: #fefaf6;
   color: #2c2c2c;
   font-size: 18px; /* Set a base font size for large screens */
+  font-family: "Arial";
 }
 
 .ProjectCard {

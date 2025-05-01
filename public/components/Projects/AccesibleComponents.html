@@ -1,0 +1,154 @@
+<div class="parallax-container">
+  <div class="parallax-image" id="parallax-image">
+    <img src="/cave.png" alt="parallax" id="parallax-img" />
+  </div>
+  <div class="case-study-page">
+    <main class="case-content">
+      <section class="hero-section">
+        <h1>Redesigning Spotify's Dropdown Menu</h1>
+        <p>
+          This case study showcases the analysis and redesign of dropdown
+          components in applications like GCal, Slack, and Spotify. I created an
+          accessible and user-friendly version of Spotify's dropdown based on
+          user experience insights.
+        </p>
+        <div class="info-grid">
+          <div><strong>Role:</strong><br />Interaction Designer</div>
+          <div><strong>Tools:</strong><br />React, Figma, HTML/CSS</div>
+          <div><strong>Focus:</strong><br />Accessibility, UX Design</div>
+          <div>
+            <strong>Deliverables:</strong><br />Dropdown Component, UX Analysis
+          </div>
+        </div>
+        <img
+          src="/componentImage.png"
+          alt="Final Dropdown Design"
+          class="hero-image"
+        />
+      </section>
+
+      <div style="display: flex; width: 100%">
+        <aside class="sidebar">
+          <nav>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#analysis">Analysis</a></li>
+              <li><a href="#walkthrough">Visual Walkthrough</a></li>
+              <li><a href="#redesign">Redesign</a></li>
+              <li><a href="#reflection">Reflection</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div style="width: 100%">
+          <section id="overview" class="case-section">
+            <h2>Why Dropdowns Matter</h2>
+            <p>
+              Dropdowns are essential in interfaces but often overlooked—until
+              they fail. This analysis looks into dropdown design in GCal,
+              Slack, and Spotify to redesign one by incorporating the positives
+              of the others.
+            </p>
+          </section>
+
+          <section id="analysis" class="case-section">
+            <h2>Complete Analysis Overview</h2>
+            <img
+              src="/images/accesibleComponent/gcal.png"
+              alt="GCal Dropdown"
+              class="section-image"
+            />
+            <img
+              src="/images/accesibleComponent/slack.png"
+              alt="Slack Dropdown"
+              class="section-image"
+            />
+            <img
+              src="/images/accesibleComponent/spotify.png"
+              alt="Spotify Dropdown"
+              class="section-image"
+            />
+            <p>
+              GCal offers accessibility and keyboard navigation. Slack excels in
+              visual feedback but lacks tab access. Spotify supports keyboard
+              navigation and active indicators, but its dropdown closes after
+              each action.
+            </p>
+          </section>
+
+          <section id="walkthrough" class="case-section">
+            <h2>Visual Walkthrough</h2>
+            <h3>Spotify Workflow</h3>
+            <img
+              src="/images/accesibleComponent/sMouse.png"
+              class="section-image"
+            />
+            <p>
+              While effective for experienced users, Spotify’s dropdown closes
+              after every action, limiting discoverability for new users.
+            </p>
+            <img
+              src="/images/accesibleComponent/sKey.png"
+              class="section-image"
+            />
+            <p>
+              Keyboard users face similar issues. Additionally, the screen
+              reader skips the first option.
+            </p>
+          </section>
+
+          <section id="redesign" class="case-section">
+            <h2>Redesign of Workflow</h2>
+            <img
+              src="/images/accesibleComponent/mKey.png"
+              class="section-image"
+            />
+            <p>
+              My redesign allows users to interact repeatedly without dropdown
+              collapse. Options show descriptive hover info.
+            </p>
+            <img
+              src="/images/accesibleComponent/mMouse.png"
+              class="section-image"
+            />
+            <p>
+              Hover text is persistent, and options can be reselected. Dropdown
+              clarity is improved with icons and ARIA labels.
+            </p>
+            <h3>Final Design</h3>
+            <img
+              src="/images/accesibleComponent/finald.png"
+              class="section-image"
+            />
+            <p>
+              The final dropdown remains open on interaction, includes arrow
+              icons for binary states, and is fully screen reader accessible.
+            </p>
+          </section>
+
+          <section id="reflection" class="case-section">
+            <h2>Reflection on Accessibility & Mismatches</h2>
+            <p>
+              Many dropdowns ignore screen reader dynamics or rely too heavily
+              on mouse interaction. This project prioritizes inclusive design by
+              improving ARIA labels, keyboard navigation, and usability without
+              compromising visual clarity.
+            </p>
+          </section>
+
+          <section id="conclusion" class="case-section">
+            <h2>Conclusion</h2>
+            <p>
+              Designing a great dropdown means balancing clarity, accessibility,
+              and usability. This project helped me deeply understand how minor
+              interface changes can dramatically affect the user experience. I'm
+              confident this new version improves navigation for all users.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="scroll-end-spacer"></div>
