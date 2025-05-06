@@ -1,5 +1,5 @@
 .banner {
-  background-size: cover; /* Ensures the entire image is visible */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -68,10 +68,9 @@
   color: rgb(255, 255, 255);
   display: flex;
   align-items: start;
-  font-family: "Arial"; /* Specify a monospaced font */
+  font-family: "Arial";
 }
 
-/* Center-aligned Row */
 .banner-row.center {
   font-size: 5rem;
 }
@@ -84,7 +83,6 @@
   font-size: 5rem;
 }
 
-/* Letter and Title Styling */
 .row-title {
   position: relative;
   display: inline-block;
@@ -107,16 +105,16 @@
   width: 100%;
   text-align: start;
   height: 100%;
-  font-size: 5rem; /* Adjust font size as needed */
-  transform-origin: center bottom; /* Rotation around the bottom edge */
+  font-size: 5rem;
+  transform-origin: center bottom;
   align-items: start;
-  font-family: "Arial"; /* Specify a monospaced font */
+  font-family: "Arial";
 }
 
 .panelVisible {
   backface-visibility: hidden;
-  transform: rotateX(0deg) translateZ(50px); /* Rotation for the currently visible panel */
-  transition: transform 0.5s; /* Smooth transition for rotation */
+  transform: rotateX(0deg) translateZ(50px);
+  transition: transform 0.5s;
 }
 
 .panelLeaving {
@@ -127,7 +125,7 @@
 .panelDefault {
   backface-visibility: hidden;
   transform: rotateX(-90deg) translateZ(50px);
-  transition: transform 0.5s; /* Smooth transition for rotation */
+  transition: transform 0.5s;
 }
 
 .MePicture {
@@ -164,7 +162,7 @@
   .banner-row.center,
   .banner-row.top,
   .banner-row.bottom {
-    font-size: 4rem; /* smaller font for mobile */
+    font-size: 4rem;
   }
 
   .blockPanel {
@@ -189,14 +187,14 @@
   }
 
   .banner-row {
-    justify-content: center; /* Center the text horizontally */
-    text-align: center; /* Center the text inside */
+    justify-content: center;
+    text-align: center;
   }
 
   .banner-row.center,
   .banner-row.top,
   .banner-row.bottom {
-    font-size: 4rem; /* smaller font for mobile */
+    font-size: 4rem;
   }
 
   .MeContainer {
@@ -235,14 +233,14 @@
   }
 
   .banner-row {
-    justify-content: center; /* Center the text horizontally */
-    text-align: center; /* Center the text inside */
+    justify-content: center;
+    text-align: center;
   }
 
   .banner-row.center,
   .banner-row.top,
   .banner-row.bottom {
-    font-size: 3rem; /* smaller font for mobile */
+    font-size: 3rem;
   }
 
   .MeContainer {

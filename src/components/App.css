@@ -46,8 +46,8 @@ body {
 .image-container {
   position: relative;
   display: flex;
-  width: 797px; /* Original width of your image */
-  height: 744px; /* Original height */
+  width: 797px;
+  height: 744px;
   transform-origin: top left;
 }
 

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   color: #2c2c2c;
-  font-size: 18px; /* Set a base font size for large screens */
+  font-size: 18px;
   font-family: "Arial";
 }
 
@@ -71,7 +71,6 @@ body {
   background-color: #f0e4ff;
 }
 
-/* Animations */
 .fade-in,
 .fade-in-delay {
   opacity: 0;
@@ -86,9 +85,6 @@ body {
   transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
 }
 
-/* 📱 Responsive tweaks */
-
-/* Tablets */
 @media (max-width: 1175px) {
   body {
     font-size: 16px;
@@ -117,7 +113,6 @@ body {
   }
 }
 
-/* Small tablets and big phones */
 @media (max-width: 960px) {
   body {
     font-size: 15px;
@@ -154,7 +149,6 @@ body {
   }
 }
 
-/* Phones */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
@@ -184,7 +178,6 @@ body {
   }
 }
 
-/* Extra small phones */
 @media (max-width: 400px) {
   body {
     font-size: 13px;

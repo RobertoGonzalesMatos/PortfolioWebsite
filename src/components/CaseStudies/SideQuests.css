@@ -169,7 +169,6 @@ body {
   margin-top: 2rem;
 }
 
-/* New Subtitle Style */
 .subtitle {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -178,7 +177,6 @@ body {
   color: #222;
 }
 
-/* Problem Section Two-Column Layout */
 .problem-layout {
   display: flex;
   flex-wrap: wrap;
@@ -222,7 +220,6 @@ body {
   margin-bottom: 0.8rem;
 }
 
-/* Tablet screens */
 @media (max-width: 1200px) {
   .case-study-page {
     padding: 2rem;
@@ -247,7 +244,6 @@ body {
   }
 }
 
-/* Mobile screens */
 @media (max-width: 800px) {
   .sidebar {
     display: none;

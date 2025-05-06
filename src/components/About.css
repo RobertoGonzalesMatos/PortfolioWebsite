@@ -38,7 +38,6 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* BADGE WRAPPER — ORBIT SYSTEM */
 .badge-wrapper {
   position: absolute;
   top: 50%;
@@ -47,7 +46,6 @@
   transform: rotateX(-20deg) translate(-50%, -50%);
 }
 
-/* HITBOX around badge */
 .orbit-hitbox {
   position: absolute;
   top: 50%;
@@ -63,7 +61,6 @@
   transform: none;
 }
 
-/* BADGE STYLE */
 .orbit-badge {
   position: absolute;
   top: 0;
@@ -82,14 +79,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* BADGE HOVER FROM HITBOX */
 .orbit-hitbox:hover .orbit-badge {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transform: scale(0.85);
   background: #eee;
 }
 
-/* DESCRIPTION BELOW ORBIT */
 .about-orbit-description {
   max-width: 700px;
   font-size: 1.2rem;
@@ -108,7 +103,6 @@
   margin-bottom: 1rem;
 }
 
-/* RESUME BUTTON */
 .resume-button {
   display: inline-block;
   margin-top: 1.5rem;
@@ -125,7 +119,6 @@
   background: #444;
 }
 
-/* 📱 MOBILE LAYOUT OVERRIDES */
 @media (max-width: 768px) {
   .center-photo-wrapper {
     position: static;
