@@ -1,18 +1,43 @@
 <div class="header">
-  <div class="logo">Roberto Gonzales</div>
+  <div class="logo" tabindex="0">Roberto Gonzales</div>
 
-  <div class="contact">
-    <a href="/PortfolioWebsite/resume.pdf" target="_blank">Resume</a>
+  <div class="context-menu">
+    <div class="see-work-button" tabindex="0">
+      <a id="scrollToWork">Latest</a>
+    </div>
+    <a href="https://www.linkedin.com/in/roberto-gonzales-matos-a24092295/">
+      <img
+        src="/PortfolioWebsite/LinkedIn.webp"
+        style="width: 32px; height: auto; border-radius: 8px; padding: 4px"
+        alt="LinkedIn profile"
+      />
+    </a>
+    <a href="https://github.com/RobertoGonzalesMatos/PortfolioWebsite">
+      <img
+        src="/PortfolioWebsite/GitHub.webp"
+        style="
+          width: 32px;
+          height: auto;
+          border-radius: 50%;
+          padding: 4px;
+          background-color: rgba(255, 255, 255, 0.922);
+        "
+        alt="GitHub repository"
+      />
+    </a>
+    <img class="SunMoon" alt="Toggle Dark Mode" id="sunMoonToggle" />
+    <div class="contact" tabindex="0">
+      <a>Resume</a>
+    </div>
   </div>
 
-  <div class="hamburger" id="hamburger">
+  <div class="hamburger" id="hamburger" tabindex="0">
     <span></span>
     <span></span>
     <span></span>
   </div>
 </div>
 
-<!-- Mobile Menu Overlay INSIDE this HTML too -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="/PortfolioWebsite/About">About</a>
   <a href="/PortfolioWebsite/Music">Music</a>
@@ -20,3 +45,30 @@
   <a href="/PortfolioWebsite/Sports">Sports</a>
   <a href="/PortfolioWebsite/Misc">Misc</a>
 </div>
+
+<template id="mobile-context-menu-items">
+  <a href="https://www.linkedin.com/in/roberto-gonzales-matos-a24092295/">
+    <img
+      src="/PortfolioWebsite/LinkedIn.webp"
+      style="width: 32px; height: auto; border-radius: 8px; padding: 4px"
+      alt="LinkedIn profile"
+    />
+  </a>
+  <a href="https://github.com/RobertoGonzalesMatos/PortfolioWebsite">
+    <img
+      src="/PortfolioWebsite/GitHub.webp"
+      style="
+        width: 32px;
+        height: auto;
+        border-radius: 50%;
+        padding: 4px;
+        background-color: rgba(255, 255, 255, 0.922);
+      "
+      alt="GitHub repository"
+    />
+  </a>
+  <img class="SunMoon" alt="Toggle Dark Mode" id="sunMoonToggleMobile" />
+  <div class="contact" tabindex="0">
+    <a>Resume</a>
+  </div>
+</template>
