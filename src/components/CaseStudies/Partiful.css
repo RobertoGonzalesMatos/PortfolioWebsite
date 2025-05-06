@@ -7,7 +7,6 @@
 }
 
 body {
-  background-color: var(--background);
   margin: 0;
   padding: 0;
 }
@@ -86,6 +85,17 @@ body {
   max-width: var(--max-content-width);
 }
 
+.link-button {
+  background-color: rgba(34, 34, 34, 0.4);
+  padding: 8px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid #c9c9ed;
+  transition: all 0.3s ease;
+}
+
 .hero-section {
   width: 100%;
 }
@@ -94,6 +104,7 @@ body {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  margin-top: 4rem;
 }
 
 .hero-section p {
@@ -226,6 +237,12 @@ body {
   justify-content: center;
   height: 100%;
   position: relative;
+}
+.case-content-flex-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .carousel-image {

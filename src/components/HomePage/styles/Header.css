@@ -6,12 +6,27 @@
   right: 0;
   height: 80px;
   padding: 0 40px;
-
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(10px);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+}
+.see-work-button a {
+  background-color: rgba(34, 34, 34, 0.4);
+  padding: 8px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: white;
+  border: 1px solid #c9c9ed;
+  transition: all 0.3s ease;
+}
+
+.see-work-button a:hover {
+  background: #444;
 }
 
 .logo {
@@ -19,55 +34,65 @@
   font-size: 2.5rem;
   cursor: pointer;
   white-space: nowrap;
-  background-color: #22222252;
   border-radius: 50px;
-  padding: 5px;
+  padding: 6px 16px;
+  transition: background-color 0.3s ease;
+}
+.logo:hover {
+  background-color: rgba(34, 34, 34, 0.7);
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #c9c9ed;
-}
-
+/* Resume Button */
 .contact a {
-  background-color: #22222252;
-  padding: 5px;
-
+  background-color: rgba(34, 34, 34, 0.4);
+  padding: 8px 14px;
   border-radius: 50px;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: white;
-  border-bottom: 2px solid #c9c9ed;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
+  border: 1px solid #c9c9ed;
+  transition: all 0.3s ease;
 }
-
 .contact a:hover {
+  background-color: rgba(34, 34, 34, 0.7);
   color: #c9c9ed;
 }
 
-/* Hamburger (hidden by default) */
+/* Context Menu */
+.context-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+.context-menu img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+.context-menu img:hover {
+  transform: scale(1.1);
+}
+.SunMoon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Hamburger */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  background-color: #22222252;
+  background-color: rgba(34, 34, 34, 0.5);
   border-radius: 50px;
   padding: 10px;
 }
-
 .hamburger span {
   display: block;
   width: 25px;
@@ -83,7 +108,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #222;
+  background-color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,33 +119,36 @@
   transition: opacity 0.3s ease;
   z-index: 999;
 }
-
 .mobile-menu a {
   color: white;
   font-size: 2rem;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
-
-/* Show Mobile Menu */
+.mobile-menu a:hover {
+  color: #c9c9ed;
+}
 .mobile-menu.open {
   opacity: 1;
   visibility: visible;
 }
 
-/* Responsive behavior */
-@media (max-width: 800px) {
-  .nav-links,
-  .contact {
+/* Responsive */
+@media (max-width: 850px) {
+  .contact,
+  .context-menu {
     display: none;
   }
 
   .hamburger {
     display: flex;
   }
+
   .logo {
-    font-weight: 700;
     font-size: 1.5rem;
+    padding: 4px 10px;
   }
+
   .header {
     padding: 0 20px;
   }

@@ -1,118 +1,180 @@
-.about-polaroid-container {
+.orbit-about {
+  background: url("/public/aboutImage.webp") center center / cover no-repeat
+    fixed;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px;
-  background-color: #fefaf6;
-  color: #2c2c2c;
-  gap: 40px;
-}
-
-.about-text-block {
-  max-width: 700px;
-  text-align: center;
-}
-
-.about-title {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #2e2c54;
-}
-
-.about-paragraph {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.polaroid-gallery {
-  display: flex;
-  flex-wrap: wrap;
+  perspective: 1200px;
+  min-height: 100vh;
   justify-content: center;
-  gap: 40px;
-  padding-top: 20px;
 }
 
-.polaroid {
+.orbit-3d-container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.center-photo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+.center-photo {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 8px solid white;
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* BADGE WRAPPER — ORBIT SYSTEM */
+.badge-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) translate(-50%, -50%);
+}
+
+/* HITBOX around badge */
+.orbit-hitbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform-style: preserve-3d;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: none;
+}
+
+/* BADGE STYLE */
+.orbit-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.8);
+  transform-style: preserve-3d;
   background: white;
-  border: 1px solid #ddd;
-  padding: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  width: 220px;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.polaroid img {
-  width: 100%;
-  border-radius: 5px;
-  display: block;
+/* BADGE HOVER FROM HITBOX */
+.orbit-hitbox:hover .orbit-badge {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transform: scale(0.85);
+  background: #eee;
 }
 
-.caption {
-  margin-top: 10px;
-  font-size: 14px;
-  text-align: center;
-  color: #555;
+/* DESCRIPTION BELOW ORBIT */
+.about-orbit-description {
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-top: 3rem;
+  background-color: rgba(208, 208, 208, 0.666);
+  padding: 1.5rem;
+  border-radius: 25px;
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Rotation effects */
-.rotate-left {
-  transform: rotate(-5deg);
+.about-orbit-description h1 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
-.rotate-right {
-  transform: rotate(5deg);
+/* RESUME BUTTON */
+.resume-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.polaroid:hover {
-  transform: rotate(0deg) scale(1.05);
+.resume-button:hover {
+  background: #444;
 }
 
-/* --------- RESPONSIVE DESIGN --------- */
-
-/* Tablets */
-@media (max-width: 991px) {
-  .about-title {
-    font-size: 30px;
+/* 📱 MOBILE LAYOUT OVERRIDES */
+@media (max-width: 768px) {
+  .center-photo-wrapper {
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    perspective: none;
+  }
+  .orbit-about {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
-  .about-paragraph {
-    font-size: 16px;
-  }
-
-  .polaroid-gallery {
-    gap: 30px;
-  }
-
-  .polaroid {
-    width: 180px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .about-polaroid-container {
-    padding: 40px 15px;
-    gap: 30px;
-  }
-
-  .about-title {
-    font-size: 26px;
-  }
-
-  .about-paragraph {
-    font-size: 15px;
-  }
-
-  .polaroid-gallery {
+  .orbit-3d-container {
+    width: auto;
+    height: auto;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
   }
 
-  .polaroid {
-    width: 80%;
-    max-width: 300px;
+  .center-photo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .badge-wrapper {
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    perspective: none;
+  }
+
+  .orbit-hitbox {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none !important;
+    pointer-events: auto;
+  }
+
+  .orbit-badge {
+    position: static;
+    transform: scale(1);
+    pointer-events: auto;
   }
 }

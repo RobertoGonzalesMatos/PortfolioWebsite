@@ -1,6 +1,10 @@
 <div class="parallax-container">
   <div class="parallax-image" id="parallax-image">
-    <img src="/PortfolioWebsite/cave.png" alt="parallax" id="parallax-img" />
+    <img
+      src="/PortfolioWebsite/cave.png"
+      alt="parallax image cave"
+      id="parallax-img"
+    />
   </div>
   <div class="case-study-page">
     <main class="case-content">
@@ -75,6 +79,123 @@
               navigation and active indicators, but its dropdown closes after
               each action.
             </p>
+            <div class="analysis-table-container">
+              <table class="analysis-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>GCal</th>
+                    <th>Slack</th>
+                    <th>Spotify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Interaction Process</strong></td>
+                    <td>
+                      Uses buttons with down arrows; supports TAB for quick
+                      actions.
+                    </td>
+                    <td>
+                      Uses buttons with down arrows; channels open on click; no
+                      keyboard dropdown access.
+                    </td>
+                    <td>
+                      Uses three-dot buttons; toggles sorting; fully keyboard
+                      navigable.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Functional Capabilities</strong></td>
+                    <td>
+                      Modals, arrow keys, and enter supported; no drag/drop or
+                      right-click.
+                    </td>
+                    <td>
+                      Displays & reorders channels; no drag/drop or right-click.
+                    </td>
+                    <td>
+                      Supports arrow keys, enter, and reversible sorting; no
+                      drag/drop or right-click.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Learnability & Efficiency</strong></td>
+                    <td>
+                      Labeled UI; quick item addition but editing takes extra
+                      steps.
+                    </td>
+                    <td>
+                      Nested dropdowns slow navigation; overwhelming options.
+                    </td>
+                    <td>Intuitive; green checkmarks indicate active states.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Accessibility</strong></td>
+                    <td>
+                      Screen reader compatible; poor tab order; good color
+                      contrast; hover highlights.
+                    </td>
+                    <td>
+                      Screen reader compatible but skips secondary labels; no
+                      tab access.
+                    </td>
+                    <td>
+                      Fully keyboard & screen reader accessible; easy tab
+                      access.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dropdown Behavior</strong></td>
+                    <td>Expands with subtle animation from button.</td>
+                    <td>Simple dropdown without animation.</td>
+                    <td>Simple dropdown, no animation.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Interactable Indicators</strong></td>
+                    <td>Background lightens on hover.</td>
+                    <td>
+                      Background lightens; extra down arrow appears on hover.
+                    </td>
+                    <td>Text lightens to white on hover.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Screen Reader</strong></td>
+                    <td>Reads focused items; hints for selection.</td>
+                    <td>Reads items but omits 'up to date' notifications.</td>
+                    <td>Reads items but skips first option on entry.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Keyboard Navigation</strong></td>
+                    <td>TAB-selectable; arrow keys work after selection.</td>
+                    <td>Mouse-only; arrows work after opening dropdown.</td>
+                    <td>
+                      Easily accessible via TAB; arrow keys & enter fully
+                      supported.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Workflow Impact</strong></td>
+                    <td>Triggers a modal navigable by arrow keys & enter.</td>
+                    <td>
+                      Updates right panel; side options can be overwhelming.
+                    </td>
+                    <td>
+                      Dropdown closes after selection; reversible actions need
+                      re-entry.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Notes</strong></td>
+                    <td>
+                      Hover animations and screen reader hints aid usability.
+                    </td>
+                    <td>Clear visual feedback, poor keyboard accessibility.</td>
+                    <td>Clear visual feedback, excellent accessibility.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section id="walkthrough" class="case-section">
@@ -82,19 +203,23 @@
             <h3>Spotify Workflow</h3>
             <img
               src="/PortfolioWebsite/images/accesibleComponent/sMouse.png"
+              alt="Spotify Mouse Workflow"
               class="section-image"
             />
             <p>
-              While effective for experienced users, Spotify’s dropdown closes
-              after every action, limiting discoverability for new users.
+              While this worklow works really good for experienced users, having
+              the dropdown close down after every action disencourages
+              exploration for new users.
             </p>
             <img
               src="/PortfolioWebsite/images/accesibleComponent/sKey.png"
+              alt="Spotify Keyboard Workflow"
               class="section-image"
             />
             <p>
-              Keyboard users face similar issues. Additionally, the screen
-              reader skips the first option.
+              Same issue here, after every action the dropdown closes.
+              Additionally, when opening the component with tab the first
+              element is not read by the screen reader.
             </p>
           </section>
 
@@ -102,48 +227,69 @@
             <h2>Redesign of Workflow</h2>
             <img
               src="/PortfolioWebsite/images/accesibleComponent/mKey.png"
+              alt="Reworked Keyboard Workflow"
               class="section-image"
             />
             <p>
-              My redesign allows users to interact repeatedly without dropdown
-              collapse. Options show descriptive hover info.
+              To solve spotify's issue we will no longer close the dropdown upon
+              interacting with it. Additionally hover options will now hold more
+              information on their respective actions.
             </p>
             <img
               src="/PortfolioWebsite/images/accesibleComponent/mMouse.png"
+              alt="Reworked Mouse Workflow"
               class="section-image"
             />
             <p>
-              Hover text is persistent, and options can be reselected. Dropdown
-              clarity is improved with icons and ARIA labels.
+              Just like with the mouse users will be able to re-choose selected
+              options without the dropdown closing. All hover extra info will
+              always display.
             </p>
             <h3>Final Design</h3>
             <img
               src="/PortfolioWebsite/images/accesibleComponent/finald.png"
+              alt="Final Dropdown Design"
               class="section-image"
             />
             <p>
-              The final dropdown remains open on interaction, includes arrow
-              icons for binary states, and is fully screen reader accessible.
+              As we can see this final design solves many of the issues in
+              spotify's design. The dropdown no longer collapses, a dropdown
+              icon is added for better clarity and also arrow signs are added to
+              indicate whether an option has a binary state. Additionally, I
+              added dynamic aria labels to make sure that users know which items
+              are being hovered, or have already been selected.
             </p>
           </section>
 
           <section id="reflection" class="case-section">
             <h2>Reflection on Accessibility & Mismatches</h2>
             <p>
-              Many dropdowns ignore screen reader dynamics or rely too heavily
-              on mouse interaction. This project prioritizes inclusive design by
-              improving ARIA labels, keyboard navigation, and usability without
-              compromising visual clarity.
+              The observed components performed well in usability and
+              accessibility, particularly in being screen reader compatible,
+              having clear labels for users with eyesight impairments, and
+              allowing keyboard-only navigation. However, accessibility gaps
+              included the lack of dynamic ARIA labels (not notifiying when
+              something has already been selected) and dropdowns closing upon
+              selection, which were addressed in my design to enhance screen
+              reader feedback and facilitate seamless keyboard navigation. These
+              improvements help bridge accessibility mismatches by ensuring a
+              more inclusive experience. For example, keyboard-only users
+              struggle with dropdown navigation in Slack, while Spotify’s use of
+              accent-colored icons aids users with visual impairments. Design
+              priorities often favor mouse and mobile users, which can
+              negatively impact keyboard and screen reader accessibility,
+              limiting efficient navigation and usability.
             </p>
           </section>
 
           <section id="conclusion" class="case-section">
             <h2>Conclusion</h2>
             <p>
-              Designing a great dropdown means balancing clarity, accessibility,
-              and usability. This project helped me deeply understand how minor
-              interface changes can dramatically affect the user experience. I'm
-              confident this new version improves navigation for all users.
+              This project taught me that designing a great dropdown is about
+              balancing usability, efficiency, and accessibility. By analyzing
+              existing designs and iterating on their strengths and weaknesses,
+              I created a dropdown component that is intuitive, accessible, and
+              efficient.
             </p>
           </section>
         </div>

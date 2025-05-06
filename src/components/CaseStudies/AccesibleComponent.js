@@ -24,14 +24,15 @@ export async function loadAccesibleComponent(darkMode, toggleDarkMode) {
   const parallax = projectContent.querySelector("#parallax-image");
   const mainContent = projectContent.querySelector(".case-study-page");
   const caseContent = mainContent?.querySelector(".case-content");
+
   if (parallax && caseContent) {
+    let ticking = false;
+
     const updateParallax = () => {
       const scrollTop = scrollContainer.scrollTop;
-
       const contentHeight = mainContent.offsetHeight;
       const viewportHeight = scrollContainer.clientHeight;
       const scrollableHeight = Math.max(contentHeight - viewportHeight, 1);
-
       const imageHeight = parallax.offsetHeight;
 
       const maxTranslate = imageHeight - contentHeight;
@@ -39,16 +40,21 @@ export async function loadAccesibleComponent(darkMode, toggleDarkMode) {
       const translateY = -progress * maxTranslate;
 
       parallax.style.transform = `translateY(${translateY}px)`;
+      ticking = false;
     };
 
-    const syncAndUpdate = () => {
-      requestAnimationFrame(updateParallax);
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
     };
 
-    scrollContainer.addEventListener("scroll", syncAndUpdate);
-    window.addEventListener("resize", syncAndUpdate);
-    new ResizeObserver(syncAndUpdate).observe(caseContent);
+    scrollContainer.addEventListener("scroll", requestTick);
+    window.addEventListener("resize", requestTick);
+    new ResizeObserver(requestTick).observe(caseContent);
   }
+
   projectContent.querySelectorAll('.sidebar a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -58,10 +64,12 @@ export async function loadAccesibleComponent(darkMode, toggleDarkMode) {
       const target = projectContent.querySelector(`#${targetId}`);
 
       if (target) {
+        const offsetPadding = 80;
         const scrollOffset =
           target.getBoundingClientRect().top -
           scrollContainer.getBoundingClientRect().top +
-          scrollContainer.scrollTop;
+          scrollContainer.scrollTop -
+          offsetPadding;
 
         scrollContainer.scrollTo({
           top: scrollOffset,

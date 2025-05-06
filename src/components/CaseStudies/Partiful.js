@@ -109,10 +109,12 @@ export async function loadPartiful(darkMode, toggleDarkMode) {
       const target = projectContent.querySelector(`#${targetId}`);
 
       if (target) {
+        const offsetPadding = 80;
         const scrollOffset =
           target.getBoundingClientRect().top -
           scrollContainer.getBoundingClientRect().top +
-          scrollContainer.scrollTop;
+          scrollContainer.scrollTop -
+          offsetPadding;
 
         scrollContainer.scrollTo({
           top: scrollOffset,

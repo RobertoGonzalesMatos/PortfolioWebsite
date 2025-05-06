@@ -86,6 +86,32 @@ body {
   max-width: var(--max-content-width);
 }
 
+.analysis-table-container {
+  overflow-x: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: rgba(31, 31, 31, 0.664);
+}
+
+.analysis-table th,
+.analysis-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.analysis-table th {
+  background-color: #0000008e;
+  font-weight: bold;
+}
+
 .hero-section {
   width: 100%;
 }
@@ -94,6 +120,7 @@ body {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  margin-top: 4rem;
 }
 a {
   color: inherit;

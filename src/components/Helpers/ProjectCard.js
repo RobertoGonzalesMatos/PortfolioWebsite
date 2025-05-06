@@ -7,7 +7,7 @@ export function createProjectCard({ imageUrl, title, date, tags, path }) {
   card.style.cursor = "pointer";
 
   card.innerHTML = `
-    <div class="image-card">
+    <div class="image-card" tabindex="0">
       <img src="${imageUrl}" alt="${title}" class="main-image" />
     </div>
     <div class="description fade-in-delay">

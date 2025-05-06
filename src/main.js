@@ -11,7 +11,6 @@ export async function renderApp() {
 
 document.addEventListener("DOMContentLoaded", renderApp);
 
-// ✅ Go back and forward with browser buttons
 window.addEventListener("popstate", renderApp);
 
 document.addEventListener("click", (e) => {

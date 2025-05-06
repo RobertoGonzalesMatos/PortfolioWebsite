@@ -26,7 +26,14 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
   const roomEl = await RoomScene(darkMode);
   const roomTarget = container.querySelector("#roomScene");
   if (roomTarget) roomTarget.replaceWith(roomEl);
-
+  window.addEventListener("load", () => {
+    if (location.hash === "#work") {
+      const workSection = document.querySelector(".CardTitle");
+      if (workSection) {
+        workSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
   const projectData = [
     {
       imageUrl: "/PortfolioWebsite/mamisincancer.png",
@@ -72,7 +79,6 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
       cardTarget.appendChild(card);
     });
   }
-
   return await PageWrapper({
     verticalScrollContent: container,
     darkMode,

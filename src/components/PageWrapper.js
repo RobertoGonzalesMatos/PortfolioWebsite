@@ -1,5 +1,6 @@
 import { loadVerticalScroll } from "./Helpers/VerticalScroll.js";
 import { loadHeader } from "./HomePage/Header.js";
+
 export async function PageWrapper({
   verticalScrollContent,
   darkMode,
@@ -19,15 +20,7 @@ export async function PageWrapper({
     transitionBody.style.transform = "translateY(0)";
   }, 0);
 
-  const sunMoon = wrapper.querySelector("#sunMoonToggle");
-  if (sunMoon) {
-    sunMoon.src = `${base}${darkMode ? "Luna.webp" : "Sol.webp"}`;
-    sunMoon.addEventListener("click", (e) => {
-      // setTimeout(() => sunMoon.classList.remove("rotate-animation"), 600);
-      toggleDarkMode();
-    });
-  }
-  const HeaderEl = await loadHeader();
+  const HeaderEl = await loadHeader(darkMode, toggleDarkMode);
   const HeaderTarget = wrapper.querySelector("#header");
   if (HeaderTarget) HeaderTarget.replaceWith(HeaderEl);
 
@@ -40,21 +33,22 @@ export async function PageWrapper({
   return {
     element: wrapper.firstElementChild,
     updateDarkMode(newDarkMode) {
-      // Update icon
-      if (sunMoon) {
-        sunMoon.src = `${base}${newDarkMode ? "Luna.webp" : "Sol.webp"}`;
-      }
-
-      // Update background class
       const root = document.getElementById("app");
       if (root) {
         root.classList.toggle("backgroundDark", !newDarkMode);
       }
 
-      // Update sky background animation
       const sky = document.querySelector(".sky, .day");
       if (sky) {
         sky.classList.toggle("dark-mode", newDarkMode);
+      }
+      const body = document.querySelector(".body");
+      if (body) {
+        body.style.backgroundColor = newDarkMode ? "#78aecc" : "#cfebe9";
+      }
+      const sunMoon = document.querySelector("#sunMoonToggle");
+      if (sunMoon) {
+        sunMoon.src = `${base}${newDarkMode ? "Luna.webp" : "Sol.webp"}`;
       }
     },
   };

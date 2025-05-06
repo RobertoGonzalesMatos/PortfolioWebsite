@@ -1,4 +1,3 @@
-// ✅ Banner.js (cleaned to use HTML and CSS for layout)
 import "./styles/Banner.css";
 
 export async function Banner() {
@@ -19,12 +18,10 @@ export async function Banner() {
     throw new Error("Missing one or more required banner elements");
   }
 
-  // Animate full rows (no staggered letters)
   animateFullRow(rowTop, "Hi! I'm Roberto");
   animateFullRow(rowCenter, "a Software Engineer");
   animateFullRow(rowBottom, "and UIUX Designer.");
 
-  // Animate activities
   const activities = [
     "I breakdance!",
     "I love to play music",

@@ -8,6 +8,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #79afcc;
 }
 .container {
   display: flex;
@@ -21,8 +22,8 @@ body {
 .background-image {
   position: absolute;
   z-index: 0;
-  height: auto; /* Adjust as needed */
-  width: 1760px; /* Adjust as needed */
+  height: auto;
+  width: 1760px;
 }
 
 .room {
@@ -111,30 +112,16 @@ body {
   transform: rotateZ(180deg);
 }
 
-.context-menu {
-  background-color: rgba(188, 185, 185, 0.409);
-  border-radius: 25px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  bottom: 3vh;
-  left: 1lh;
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.SunMoon {
-  cursor: grab;
-  width: 60%;
-  height: auto;
-}
-
 .vertical-scroll-content {
   width: 100%;
   height: 100vh;
   position: relative;
+}
+
+@media (max-width: 1070px) {
+  .roomTitle {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 800px) {

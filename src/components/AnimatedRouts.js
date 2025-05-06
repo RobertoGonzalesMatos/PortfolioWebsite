@@ -4,6 +4,7 @@ import { loadResponsiveRedesign } from "./CaseStudies/ResponsiveRedesign.js";
 import { loadPartiful } from "./CaseStudies/Partiful";
 import { loadSideQuests } from "./CaseStudies/SideQuests";
 import { loadAccesibleComponent } from "./CaseStudies/AccesibleComponent";
+import { PageWrapper } from "./PageWrapper.js";
 
 export async function renderAnimatedRoutes() {
   const route = location.pathname.replace("/PortfolioWebsite", "") || "/";
@@ -15,6 +16,11 @@ export async function renderAnimatedRoutes() {
 
   function toggleDarkMode() {
     darkMode = !darkMode;
+    const body = document.body;
+
+    if (body) {
+      body.style.backgroundColor = !darkMode ? "#78aecc" : "#cfebe9";
+    }
     if (currentComponent?.updateDarkMode) {
       currentComponent.updateDarkMode(darkMode);
     }
@@ -50,12 +56,19 @@ export async function renderAnimatedRoutes() {
 
         const image = document.createElement("img");
         image.src = "/WIP.webp";
-        image.alt = "Work in Progress";
+        image.alt = "Work in Progress placeholder";
         image.style.width = "100%";
         image.style.borderRadius = "12px";
         image.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+        image.style.marginTop = "100px";
+
         container.appendChild(image);
-        return container;
+
+        return await PageWrapper({
+          verticalScrollContent: container,
+          darkMode,
+          toggleDarkMode,
+        });
     }
   }
 
