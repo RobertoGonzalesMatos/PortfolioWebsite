@@ -6,21 +6,39 @@ import { loadSideQuests } from "./CaseStudies/SideQuests";
 import { loadAccesibleComponent } from "./CaseStudies/AccesibleComponent";
 import { PageWrapper } from "./PageWrapper.js";
 
+const DARK_MODE_KEY = "portfolio.darkMode";
+
+function readDarkMode() {
+  const raw = localStorage.getItem(DARK_MODE_KEY);
+  return raw === "true";
+}
+
+function writeDarkMode(value) {
+  localStorage.setItem(DARK_MODE_KEY, String(value));
+}
+
+function applyBodyTheme(darkMode) {
+  const body = document.body;
+  if (!body) return;
+  body.style.backgroundColor = !darkMode ? "#78aecc" : "#cfebe9";
+}
+
 export async function renderAnimatedRoutes() {
   const route = location.pathname.replace("/PortfolioWebsite", "") || "/";
   const wrapper = document.createElement("div");
   wrapper.id = "page-container";
 
-  let darkMode = false;
+  let darkMode = readDarkMode();
   let currentComponent = null;
+
+  // Apply immediately so refresh / route changes keep theme
+  applyBodyTheme(darkMode);
 
   function toggleDarkMode() {
     darkMode = !darkMode;
-    const body = document.body;
+    writeDarkMode(darkMode);
+    applyBodyTheme(darkMode);
 
-    if (body) {
-      body.style.backgroundColor = !darkMode ? "#78aecc" : "#cfebe9";
-    }
     if (currentComponent?.updateDarkMode) {
       currentComponent.updateDarkMode(darkMode);
     }
@@ -46,7 +64,7 @@ export async function renderAnimatedRoutes() {
         return await loadSideQuests(darkMode, toggleDarkMode);
       case "/Projects/AccesibleComponent":
         return await loadAccesibleComponent(darkMode, toggleDarkMode);
-      default:
+      default: {
         const container = document.createElement("div");
         container.style.display = "flex";
         container.style.justifyContent = "center";
@@ -69,6 +87,7 @@ export async function renderAnimatedRoutes() {
           darkMode,
           toggleDarkMode,
         });
+      }
     }
   }
 

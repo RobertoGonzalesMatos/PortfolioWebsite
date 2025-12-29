@@ -42,6 +42,10 @@ export async function PageWrapper({
       if (sky) {
         sky.classList.toggle("dark-mode", newDarkMode);
       }
+      const sky2 = document.querySelector(".sky-2, .day");
+      if (sky2) {
+        sky2.classList.toggle("dark-mode", newDarkMode);
+      }
       const body = document.querySelector(".body");
       if (body) {
         body.style.backgroundColor = newDarkMode ? "#78aecc" : "#cfebe9";

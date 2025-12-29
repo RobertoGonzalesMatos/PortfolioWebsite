@@ -15,8 +15,11 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
 
   const skyImage = container.querySelector(".sky");
   if (skyImage) {
-    console.log("A");
     skyImage.classList.toggle("dark-mode", darkMode);
+  }
+  const sky2Image = container.querySelector(".sky-2");
+  if (sky2Image) {
+    sky2Image.classList.toggle("dark-mode", darkMode);
   }
 
   const bannerEl = await Banner();
