@@ -73,7 +73,7 @@ export async function renderAnimatedRoutes() {
         container.style.minHeight = "80vh";
 
         const image = document.createElement("img");
-        image.src = "/WIP.webp";
+        image.src = "/PortfolioWebsite/WIP.webp";
         image.alt = "Work in Progress placeholder";
         image.style.width = "100%";
         image.style.borderRadius = "12px";

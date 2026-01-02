@@ -54,6 +54,9 @@ export async function PageWrapper({
       if (sunMoon) {
         sunMoon.src = `${base}${newDarkMode ? "Luna.webp" : "Sol.webp"}`;
       }
+      if (typeof verticalScrollContent?.updateDarkMode === "function") {
+        verticalScrollContent.updateDarkMode(newDarkMode);
+      }
     },
   };
 }
