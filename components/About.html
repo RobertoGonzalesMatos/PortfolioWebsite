@@ -1,38 +1,126 @@
-<section class="orbit-about">
-  <div class="orbit-3d-container">
-    <div class="center-photo-wrapper">
-      <img
-        src="/PortfolioWebsite/me.jpg"
-        alt="Roberto Gonzales Main Photo"
-        class="center-photo"
-      />
-    </div>
-
-    <div class="badge-wrapper">
-      <div class="orbit-hitbox">
-        <div class="orbit-badge" data-badge="brown">🎓 Brown</div>
-      </div>
-      <div class="orbit-hitbox">
-        <div class="orbit-badge" data-badge="peru">🇵🇪 Peru</div>
-      </div>
-      <div class="orbit-hitbox">
-        <div class="orbit-badge" data-badge="coder">👾 CompSci</div>
-      </div>
-      <div class="orbit-hitbox">
-        <div class="orbit-badge" data-badge="uiux">🎨 UIUX</div>
-      </div>
-      <div class="orbit-hitbox">
-        <div class="orbit-badge" data-badge="more">🤔💭 More...</div>
-      </div>
-    </div>
+<div class="container-aboutme">
+  <div class="sky-clip-wrapper-aboutme">
+    <img class="sky" src="/PortfolioWebsite/sky.png" alt="sky Background" />
   </div>
 
-  <div class="about-orbit-description">
-    <h1>Hi, I’m Roberto</h1>
-    <p id="about-description-text">
-      I am a software engineer and a UI designer who loves to challenge
-      themselves! Click on the badges that orbit me to know more!
-      <strong>Brown University</strong>.
-    </p>
+  <div class="ground"></div>
+  <div class="aboutContainer">
+    <main class="about-shell">
+      <!-- HERO -->
+      <section class="about-hero">
+        <img
+          src="/PortfolioWebsite/me.jpg"
+          alt="Roberto Gonzales"
+          class="about-portrait"
+        />
+
+        <div>
+          <h1 class="about-title">Hi, I’m Roberto</h1>
+          <p class="about-subtitle">
+            Software engineer with a Computer Science background from Brown. I
+            build interfaces that are calm, fast, and intentional—where
+            technical depth meets clean product thinking.
+          </p>
+
+          <div class="about-chips" role="group" aria-label="About topics">
+            <button
+              class="about-chip active"
+              data-key="overview"
+              aria-pressed="true"
+              type="button"
+            >
+              Overview
+            </button>
+            <button
+              class="about-chip"
+              data-key="brown"
+              aria-pressed="false"
+              type="button"
+            >
+              🎓 Brown
+            </button>
+            <button
+              class="about-chip"
+              data-key="peru"
+              aria-pressed="false"
+              type="button"
+            >
+              🇵🇪 Peru
+            </button>
+            <button
+              class="about-chip"
+              data-key="compsci"
+              aria-pressed="false"
+              type="button"
+            >
+              👾 CompSci
+            </button>
+            <button
+              class="about-chip"
+              data-key="uiux"
+              aria-pressed="false"
+              type="button"
+            >
+              🎨 UI/UX
+            </button>
+            <button
+              class="about-chip"
+              data-key="more"
+              aria-pressed="false"
+              type="button"
+            >
+              🤔 More
+            </button>
+          </div>
+
+          <div class="about-actions">
+            <!-- Update these as needed -->
+            <a
+              class="about-button"
+              href="/PortfolioWebsite/Roberto_Gonzales_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
+            <a class="about-button secondary" href="/PortfolioWebsite/#work">
+              Latest work
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BODY GRID -->
+      <section class="about-grid">
+        <div class="about-card">
+          <h2>Experience</h2>
+          <ul class="about-list">
+            <li>Software Engineer — Adobe</li>
+            <li>Internships — Adobe (x2)</li>
+            <li>Frontend engineering + UI implementation</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h2>Focus</h2>
+          <ul class="about-list">
+            <li>Frontend systems & performance</li>
+            <li>UI/UX-driven engineering</li>
+            <li>Accessibility and product polish</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DESCRIPTION PANEL -->
+      <section class="about-description" aria-live="polite">
+        <h2 id="about-description-title">Overview</h2>
+        <p id="about-description-text">
+          I’m a software engineer with a background in Computer Science from
+          Brown University. I’m most interested in the intersection of
+          engineering and design—building interfaces that feel calm, fast, and
+          intentional.
+        </p>
+      </section>
+    </main>
   </div>
-</section>
+</div>
