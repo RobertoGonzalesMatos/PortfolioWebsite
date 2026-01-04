@@ -1,5 +1,6 @@
 import { loadHomePage } from "./HomePage/Home.js";
 import { loadAboutPage } from "./AboutMe.js";
+import { loadProjectsPage } from "./Projects.js";
 import { loadResponsiveRedesign } from "./CaseStudies/ResponsiveRedesign.js";
 import { loadPartiful } from "./CaseStudies/Partiful";
 import { loadSideQuests } from "./CaseStudies/SideQuests";
@@ -56,6 +57,8 @@ export async function renderAnimatedRoutes() {
         return await loadHomePage(darkMode, toggleDarkMode);
       case "/About":
         return await loadAboutPage(darkMode, toggleDarkMode);
+      case "/Projects":
+        return await loadProjectsPage(darkMode, toggleDarkMode);
       case "/Projects/ResponsiveRedesign":
         return await loadResponsiveRedesign(darkMode, toggleDarkMode);
       case "/Projects/Partiful":

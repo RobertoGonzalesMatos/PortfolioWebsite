@@ -1,0 +1,209 @@
+/* =========================
+   Project Hub (simple)
+   - Parallax background
+   - Hero + filters
+   - Scrollable cards
+   ========================= */
+
+.projects-page {
+  position: relative;
+  width: 100%;
+  min-height: 160vh;
+  overflow: visible;
+}
+
+/* Parallax background layer */
+#parallax-image {
+  position: absolute; /* IMPORTANT: not fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170vh; /* IMPORTANT: must be taller than content */
+  z-index: 0;
+
+  background: url("/public/projectBG.png") center top / cover no-repeat;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Readability veil (keeps art, makes text readable) */
+.projects-veil {
+  position: absolute; /* IMPORTANT: not fixed */
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: radial-gradient(
+      1000px 520px at 50% 160px,
+      rgba(0, 0, 0, 0.35),
+      transparent 65%
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.08));
+}
+
+/* Foreground content wrapper */
+.projects-shell {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+  padding: 5.2rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Hero */
+.projects-hero {
+  padding: 1.9rem 2rem;
+  border-radius: 28px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 24, 0.78) 0%,
+    rgba(18, 20, 24, 0.55) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-hero::before {
+  content: "";
+  position: absolute;
+  inset: -120px -160px auto -160px;
+  height: 240px;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.projects-title {
+  margin: 0;
+  color: #f2f6f7;
+  font-size: clamp(2.2rem, 3.2vw, 3.1rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-weight: 850;
+}
+
+.projects-subtitle {
+  margin: 0.75rem 0 0;
+  color: rgba(242, 246, 247, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 72ch;
+}
+
+/* Filters row */
+.filters-row {
+  margin-top: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.project-search {
+  flex: 1 1 280px;
+  min-width: 220px;
+
+  padding: 0.75rem 0.95rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(242, 246, 247, 0.95);
+
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.project-search::placeholder {
+  color: rgba(242, 246, 247, 0.55);
+}
+
+/* Filter chips */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+
+  padding: 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-chip {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(242, 246, 247, 0.95);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border 0.18s ease;
+}
+
+.filter-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+.filter-chip.active {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 3px;
+}
+
+/* Projects list */
+#projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 0.15rem;
+}
+
+/* Optional: if you want a "section" label like "Most recent" */
+.projects-section-label {
+  margin: 0.8rem 0 0.2rem;
+  color: rgba(242, 246, 247, 0.8);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Make your existing cards feel more premium in the hub context */
+.hub-card {
+  width: 100%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 820px) {
+  .projects-shell {
+    padding: 3.8rem 0 4rem;
+  }
+
+  .projects-hero {
+    padding: 1.5rem;
+  }
+}
+
+.scroll-end-spacer {
+  height: 60vh;
+}
