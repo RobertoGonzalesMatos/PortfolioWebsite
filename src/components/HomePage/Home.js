@@ -43,28 +43,28 @@ export async function loadHomePage(darkMode, toggleDarkMode) {
       title: "MamisinCancer Redesign",
       date: "May–June 2023",
       tags: ["UX Design", "TypeScript", "React", "Figma"],
-      path: "/Projects/ResponsiveRedesign",
+      path: "/ResponsiveRedesign",
     },
     {
       imageUrl: "/PortfolioWebsite/componentImage.png",
       title: "Accessible Dropdown",
       date: "July 2023",
       tags: ["Accesibility", "React", "TypeScript", "CSS"],
-      path: "/Projects/AccesibleComponent",
+      path: "/AccesibleComponent",
     },
     {
       imageUrl: "/PortfolioWebsite/sidequest.gif",
       title: "SideQuests",
       date: "Nov 2024 - Feb 2025",
       tags: ["FullStack", "React", "AI", "Figma", "CSS"],
-      path: "/Projects/SideQuests",
+      path: "/SideQuests",
     },
     {
       imageUrl: "/PortfolioWebsite/PartifulRedesign.png",
       title: "Partiful Casual Events",
       date: "March 2024",
       tags: ["UX Design", "Figma", "Product Design"],
-      path: "/Projects/Partiful",
+      path: "/Partiful",
     },
   ];
 

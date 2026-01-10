@@ -59,13 +59,13 @@ export async function renderAnimatedRoutes() {
         return await loadAboutPage(darkMode, toggleDarkMode);
       case "/Projects":
         return await loadProjectsPage(darkMode, toggleDarkMode);
-      case "/Projects/ResponsiveRedesign":
+      case "/ResponsiveRedesign":
         return await loadResponsiveRedesign(darkMode, toggleDarkMode);
-      case "/Projects/Partiful":
+      case "/Partiful":
         return await loadPartiful(darkMode, toggleDarkMode);
-      case "/Projects/SideQuests":
+      case "/SideQuests":
         return await loadSideQuests(darkMode, toggleDarkMode);
-      case "/Projects/AccesibleComponent":
+      case "/AccesibleComponent":
         return await loadAccesibleComponent(darkMode, toggleDarkMode);
       default: {
         const container = document.createElement("div");
